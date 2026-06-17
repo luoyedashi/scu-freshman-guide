@@ -4,6 +4,12 @@
 
 **本网站非四川大学官方招生网站。**
 
+## 在线地址
+
+**https://luoyedashi.github.io/scu-freshman-guide/**
+
+微信分享二维码：`assets/share-qr.png`（重新部署后若换域名，运行 `python scripts/generate_qr.py --url <新地址>`）
+
 ## 本地预览
 
 静态站点需通过 HTTP 服务打开（ES Module 不支持 `file://`）：
