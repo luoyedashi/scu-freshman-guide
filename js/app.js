@@ -1,9 +1,11 @@
 import { initScores } from "./scores.js";
-import { initMajors, initPolicies, initCampus, initFaq } from "./majors.js";
+import { initMajors, initPolicies, initCampus, initFaq, wireOfficialLinks } from "./majors.js";
+import { initSimulator } from "./simulator.js";
 
 const SECTIONS = [
   { id: "section-hero", tab: "首页" },
   { id: "section-guide", tab: "26届" },
+  { id: "section-simulator", tab: "模拟" },
   { id: "section-scores", tab: "分数线" },
   { id: "section-policies", tab: "政策" },
   { id: "section-majors", tab: "专业" },
@@ -120,10 +122,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   initCountdown();
 
   await Promise.all([
+    wireOfficialLinks(),
     initScores(),
     initPolicies(),
     initMajors(),
     initCampus(),
     initFaq(),
+    initSimulator(),
   ]);
 });

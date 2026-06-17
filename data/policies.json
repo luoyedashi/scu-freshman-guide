@@ -1,127 +1,119 @@
 {
   "meta": {
-    "source": "https://zs.scu.edu.cn",
+    "source": "阳光高考 + 四川大学2026招生章程",
     "updated": "2026-06-17",
     "target_cohort": "2026年高考"
   },
   "policies": [
     {
       "title": "2026年普通本科招生章程",
-      "summary": "最新发布。含录取规则、同分排序、专业调剂、体检要求等，26届填报必读。",
-      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/",
+      "summary": "阳光高考平台查询四川大学2026年章程全文（教育部备案）。",
+      "urlKey": "chsi_charter",
       "category": "招生章程",
       "year": 2026,
       "featured": true
     },
     {
-      "title": "2026年强基计划招生简章",
-      "summary": "数学、物理、化学、生物、基础医学等基础学科，4月报名、6月校测。",
-      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/202604/t20260410_136892.html",
-      "category": "强基计划",
+      "title": "2026招生章程（全文转载参考）",
+      "summary": "第三方转载的章程全文，便于快速阅读；以阳光高考与学校官网为准。",
+      "urlKey": "charter_mirror_2026",
+      "category": "招生章程",
       "year": 2026,
       "featured": true
     },
     {
-      "title": "2026年艺术类本科招生简章",
-      "summary": "美术、音乐、舞蹈等艺术类专业报名条件与考试安排。",
-      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/202604/t20260418_136978.html",
-      "category": "艺术类",
-      "year": 2026,
-      "featured": false
-    },
-    {
-      "title": "2026年运动训练专业招生简章",
-      "summary": "体育单招运动训练专业报名与录取说明。",
-      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/202503/t20250320_136654.html",
-      "category": "体育类",
-      "year": 2026,
-      "featured": false
-    },
-    {
-      "title": "2025年国家专项计划招生简章",
-      "summary": "面向农村和脱贫地区学生，2026年细则以当年公布为准。",
-      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/202504/t20250415_136945.html",
-      "category": "专项计划",
-      "year": 2025,
-      "featured": true
-    },
-    {
-      "title": "2025年高校专项计划招生简章",
-      "summary": "2026年高校专项不提前报名，投档须达省特控线。",
-      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/202504/t20250415_136946.html",
-      "category": "专项计划",
-      "year": 2025,
-      "featured": false
-    },
-    {
-      "title": "四川大学匹兹堡学院招生",
-      "summary": "中外合作办学，全英文教学，独立代码。",
-      "url": "https://scupi.scu.edu.cn/admissions",
-      "category": "中外合作",
+      "title": "四川大学 · 阳光高考学校主页",
+      "summary": "招生章程、招生计划、历年分数等官方入口汇总。",
+      "urlKey": "chsi_school",
+      "category": "官方入口",
       "year": 2026,
       "featured": true
     },
     {
-      "title": "中德合作办学电气工程及其自动化",
-      "summary": "与德国克劳斯塔尔工业大学合作办学。",
-      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/202504/t20250422_137012.html",
-      "category": "中外合作",
-      "year": 2025,
-      "featured": false
-    },
-    {
-      "title": "2026年分省招生计划",
-      "summary": "官方分省分专业招生人数查询。",
-      "url": "https://zs.scu.edu.cn/zsxx/zsjh/",
+      "title": "2026年分省招生计划查询",
+      "summary": "阳光高考招生计划系统，选择「四川大学」查看分省分专业计划。",
+      "urlKey": "chsi_plan",
       "category": "招生计划",
       "year": 2026,
       "featured": true
     },
     {
-      "title": "历年录取分数线（官方）",
-      "summary": "各省各批次录取分数与位次，建议与本站数据交叉核对。",
-      "url": "https://zs.scu.edu.cn/zsxx/lqfs/",
+      "title": "历年录取数据查询",
+      "summary": "阳光高考查询历年投档与录取参考数据。",
+      "urlKey": "chsi_score",
       "category": "录取分数",
       "year": 2026,
       "featured": true
     },
     {
-      "title": "本科招生专业目录",
-      "summary": "川大全部本科招生专业及学院一览。",
-      "url": "https://zs.scu.edu.cn/zsxx/zyjs/",
-      "category": "专业介绍",
+      "title": "2026年强基计划",
+      "summary": "四川大学强基计划报名系统（学信网）。",
+      "urlKey": "chsi_qiangji",
+      "category": "强基计划",
+      "year": 2026,
+      "featured": true
+    },
+    {
+      "title": "特殊类型招生报名系统",
+      "summary": "保送生、艺术类、高水平运动队等特殊类型。",
+      "urlKey": "chsi_special",
+      "category": "特殊类型",
       "year": 2026,
       "featured": false
     },
     {
-      "title": "阳光高考平台 · 川大章程",
-      "summary": "教育部阳光高考备案招生章程。",
-      "url": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifYz--method=index,lb=1",
-      "category": "招生章程",
+      "title": "高校专项说明",
+      "summary": "2026年高校专项不提前报名；须达省特控线，详见招生章程第二十四条。",
+      "urlKey": "charter_mirror_2026",
+      "category": "专项计划",
+      "year": 2026,
+      "featured": true
+    },
+    {
+      "title": "国家专项计划",
+      "summary": "面向农村和脱贫地区，详见各省专项计划通知及川大招生计划。",
+      "urlKey": "chsi_plan",
+      "category": "专项计划",
       "year": 2026,
       "featured": false
     },
     {
-      "title": "新生入学须知",
-      "summary": "报到、住宿、军训等迎新信息。",
-      "url": "https://yx.scu.edu.cn/",
+      "title": "四川大学本科招生网",
+      "summary": "学校官方招生网站首页（请从首页菜单进入章程、分数、计划）。",
+      "urlKey": "scu_zs_home",
+      "category": "官方入口",
+      "year": 2026,
+      "featured": true
+    },
+    {
+      "title": "四川大学招生信息（官网门户）",
+      "summary": "四川大学主页招生信息栏目。",
+      "urlKey": "scu_zs_portal",
+      "category": "官方入口",
+      "year": 2026,
+      "featured": false
+    },
+    {
+      "title": "匹兹堡学院招生",
+      "summary": "中外合作办学机构独立招生信息。",
+      "urlKey": "scupi",
+      "category": "中外合作",
+      "year": 2026,
+      "featured": true
+    },
+    {
+      "title": "新生入学与迎新",
+      "summary": "报到、住宿、军训等迎新安排。",
+      "urlKey": "scu_yingxin",
       "category": "校园生活",
       "year": 2026,
       "featured": false
     },
     {
-      "title": "学生资助政策",
-      "summary": "奖学金、助学金、助学贷款。",
-      "url": "https://xszz.scu.edu.cn/",
-      "category": "奖助学金",
-      "year": 2026,
-      "featured": false
-    },
-    {
-      "title": "常见问题解答",
-      "summary": "志愿填报、录取、报到高频问题。",
-      "url": "https://zs.scu.edu.cn/zsxx/cjwt/",
-      "category": "常见问题",
+      "title": "教务处（学籍与转专业）",
+      "summary": "转专业、选课等学籍政策查询入口。",
+      "urlKey": "scu_jwc",
+      "category": "学籍管理",
       "year": 2026,
       "featured": false
     }

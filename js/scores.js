@@ -1,5 +1,7 @@
 /** @typedef {{ year: number; province: string; category: string; batch: string; control_line: number|null; min_score: number|null; min_rank: number|null; note: string; exam_mode: string }} ScoreRecord */
 
+import { loadLinks, officialUrl } from "./links.js";
+
 let allRecords = [];
 
 const filters = {
@@ -19,6 +21,7 @@ const PROVINCE_MODES = {
 };
 
 export async function initScores() {
+  await loadLinks();
   const res = await fetch("data/scores.json");
   const data = await res.json();
   allRecords = data.records;
@@ -26,7 +29,7 @@ export async function initScores() {
   const metaEl = document.getElementById("scores-updated");
   if (metaEl && data.meta) {
     const n = data.meta.provinces_covered?.length ?? 0;
-    metaEl.textContent = `数据更新：${data.meta.updated} · 覆盖 ${n} 省 · 来源：川大招生网`;
+    metaEl.textContent = `数据更新：${data.meta.updated} · 覆盖 ${n} 省 · 来源：阳光高考录取数据`;
   }
 
   buildProvinceSelect();
@@ -222,7 +225,7 @@ function renderScores() {
     list.innerHTML = `
       <div class="empty-state">
         <p>该组合暂无数据。</p>
-        <a href="https://zs.scu.edu.cn/zsxx/lqfs/" target="_blank" rel="noopener">查看官方分数线</a>
+        <a href="${officialUrl("chsi_score")}" target="_blank" rel="noopener noreferrer">查看阳光高考官方数据</a>
       </div>`;
     return;
   }

@@ -218,7 +218,7 @@ def build() -> dict:
     provinces = sorted({r["province"] for r in records})
     return {
         "meta": {
-            "source": "https://zs.scu.edu.cn/zsxx/lqfs/",
+            "source": "https://gaokao.chsi.com.cn/zsgs/mdgs.jsp",
             "updated": date.today().isoformat(),
             "provinces_covered": provinces,
             "years": [2024, 2023, 2022],

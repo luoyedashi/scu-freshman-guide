@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "updated": "2026-06-17",
+    "note": "以下链接经 HTTP 探测可用；zs.scu.edu.cn 需在浏览器中打开首页后从菜单进入"
+  },
+  "links": {
+    "chsi_school": "https://gaokao.chsi.com.cn/sch/schoolInfo--schId-10610.dhtml",
+    "chsi_charter": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/",
+    "chsi_plan": "https://gaokao.chsi.com.cn/zsgs/mdgs.jsp",
+    "chsi_score": "https://gaokao.chsi.com.cn/zsgs/mdgs.jsp",
+    "chsi_qiangji": "https://bm.chsi.com.cn/jcxkzs/sch/10610",
+    "chsi_special": "https://gaokao.chsi.com.cn/zzbm/",
+    "scu_zs_portal": "https://www.scu.edu.cn/zsxx.htm",
+    "scu_zs_home": "https://zs.scu.edu.cn",
+    "scu_yingxin": "https://yx.scu.edu.cn/",
+    "scu_jwc": "https://jwc.scu.edu.cn/",
+    "scupi": "https://scupi.scu.edu.cn/",
+    "cs_scu": "https://cs.scu.edu.cn/",
+    "wch_clinical": "https://www.wchscu.cn/",
+    "hx_oral": "https://www.hxkq.org/",
+    "charter_mirror_2026": "https://www.gaokzx.com/gk/zhiyuan/155958.html"
+  }
+}

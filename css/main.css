@@ -956,30 +956,147 @@ a {
 
 .policy-card--link {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;
+  gap: 10px;
   padding: 12px 14px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   background: var(--bg-card);
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-light);
   color: inherit;
 }
 
+.policy-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.policy-card__summary {
+  display: none;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 4px 0 0;
+}
+
+.policy-card--link .policy-card__summary {
+  display: block;
+}
+
 .policy-card__year {
   font-size: 11px;
   color: var(--text-muted);
-  flex: 0 0 36px;
+  margin-right: 6px;
 }
 
 .policy-card__title {
-  flex: 1;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .policy-card__arrow {
+  flex-shrink: 0;
   color: var(--scu-red);
+  padding-top: 2px;
+}
+
+/* ── Simulator ── */
+.sim-form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.sim-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.sim-form select,
+.sim-form input {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+}
+
+.sim-form__btn {
+  padding: 12px;
+  background: var(--scu-red);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sim-result {
+  min-height: 24px;
+}
+
+.sim-result__tier {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.sim-result__tier--reach {
+  background: #fde8e8;
+  color: var(--scu-red);
+}
+
+.sim-result__tier--stable {
+  background: var(--scu-gold-light);
+  color: var(--scu-red-dark);
+}
+
+.sim-result__tier--safe {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.sim-result__advice {
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+
+.sim-result__stats {
+  margin: 0 0 12px;
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.sim-result__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.sim-result__table th,
+.sim-result__table td {
+  padding: 8px;
+  border-bottom: 1px solid var(--border-light);
+  text-align: left;
+}
+
+.sim-result__note {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.sim-result__empty {
+  font-size: 14px;
+  color: var(--text-secondary);
 }
 
 /* ── Major compact ── */

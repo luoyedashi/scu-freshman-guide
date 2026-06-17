@@ -34,14 +34,14 @@
       <p class="hero__subtitle">面向 2026 高考 · 分数线 · 简章 · 专业 · 江安导览</p>
       <div class="hero__countdown" id="gaokao-countdown">距 2026 高考</div>
       <div class="hero__banner" role="img" aria-label="四川大学"></div>
-      <p class="hero__trust" id="scores-updated">数据来源于四川大学本科招生网</p>
+      <p class="hero__trust" id="scores-updated">分数线数据来源于阳光高考 · 仅供参考</p>
     </section>
 
     <div class="quick-grid" role="navigation">
+      <div class="quick-item" data-scroll="section-simulator" tabindex="0"><span class="quick-item__icon">🎯</span><span class="quick-item__label">模拟</span></div>
       <div class="quick-item" data-scroll="section-scores" tabindex="0"><span class="quick-item__icon">📊</span><span class="quick-item__label">分数线</span></div>
       <div class="quick-item" data-scroll="section-policies" tabindex="0"><span class="quick-item__icon">📋</span><span class="quick-item__label">简章</span></div>
       <div class="quick-item" data-scroll="section-majors" tabindex="0"><span class="quick-item__icon">🎓</span><span class="quick-item__label">专业</span></div>
-      <div class="quick-item" data-scroll="section-campus" tabindex="0"><span class="quick-item__icon">🗺️</span><span class="quick-item__label">江安</span></div>
       <div class="quick-item" data-scroll="section-contact" tabindex="0"><span class="quick-item__icon">💬</span><span class="quick-item__label">咨询</span></div>
     </div>
 
@@ -58,12 +58,28 @@
         <h2 class="section__title">高考时间轴</h2>
       </header>
       <div class="timeline">
-        <a class="timeline__item" href="https://zs.scu.edu.cn/zsxx/zszc/bkzs/" target="_blank" rel="noopener"><span class="timeline__when">已发布</span><span class="timeline__what">2026 本科招生章程</span><span class="timeline__go">→</span></a>
-        <div class="timeline__item timeline__item--static"><span class="timeline__when">4月</span><span class="timeline__what">强基计划报名</span></div>
+        <a class="timeline__item" data-link-key="chsi_charter" href="https://gaokao.chsi.com.cn/zsgs/zhangcheng/" target="_blank" rel="noopener noreferrer"><span class="timeline__when">已发布</span><span class="timeline__what">2026 本科招生章程</span><span class="timeline__go">→</span></a>
+        <a class="timeline__item" data-link-key="chsi_qiangji" href="https://bm.chsi.com.cn/jcxkzs/sch/10610" target="_blank" rel="noopener noreferrer"><span class="timeline__when">4月</span><span class="timeline__what">强基计划报名</span><span class="timeline__go">→</span></a>
         <div class="timeline__item timeline__item--static"><span class="timeline__when">6月7-8日</span><span class="timeline__what">全国统一高考</span></div>
         <div class="timeline__item timeline__item--static"><span class="timeline__when">6月下旬</span><span class="timeline__what">出分 · 填报 · 咨询</span></div>
       </div>
-      <a class="link-card" href="https://zs.scu.edu.cn/zsxx/lqfs/" target="_blank" rel="noopener">官方历年分数线查询 →</a>
+      <a class="link-card" data-link-key="chsi_score" href="https://gaokao.chsi.com.cn/zsgs/mdgs.jsp" target="_blank" rel="noopener noreferrer">阳光高考历年录取数据 →</a>
+    </section>
+
+    <!-- 志愿模拟 -->
+    <section class="section section--compact" id="section-simulator">
+      <header class="section__header">
+        <span class="section__tag">志愿模拟</span>
+        <h2 class="section__title">冲稳保参考</h2>
+        <p class="section__desc">输入省份、科类与分数，对照 2022–2024 川大最低线</p>
+      </header>
+      <form class="sim-form" id="sim-form">
+        <label>省份<select id="sim-province" required></select></label>
+        <label>科类<select id="sim-category" required></select></label>
+        <label>高考分数<input type="number" id="sim-score" min="200" max="900" placeholder="如 620" required></label>
+        <button type="submit" class="sim-form__btn">开始评估</button>
+      </form>
+      <div id="sim-result" class="sim-result" aria-live="polite"></div>
     </section>
 
     <!-- 分数线 -->
@@ -81,7 +97,7 @@
         <div class="filter-group"><div class="filter-group__label">批次</div><div class="filter-chips" id="filter-batch"></div></div>
       </details>
       <div class="score-list" id="score-list"></div>
-      <a class="link-card" href="https://zs.scu.edu.cn/zsxx/lqfs/" target="_blank" rel="noopener">核对官方最新分数 →</a>
+      <a class="link-card" data-link-key="chsi_score" href="https://gaokao.chsi.com.cn/zsgs/mdgs.jsp" target="_blank" rel="noopener noreferrer">阳光高考核对官方分数 →</a>
     </section>
 
     <!-- 政策 -->
@@ -100,13 +116,13 @@
       <header class="section__header">
         <span class="section__tag">专业</span>
         <h2 class="section__title">热门专业精选</h2>
-        <p class="section__desc">深度介绍热门专业，更多见官方目录</p>
+        <p class="section__desc">按2026招生章程：大类招生、拔尖班、新增专业</p>
       </header>
       <input type="search" class="major-search" id="major-search" placeholder="搜索专业…" aria-label="搜索专业">
       <div class="major-tags" id="major-tags"></div>
       <div id="college-list"></div>
       <button type="button" class="btn-outline" id="majors-expand">展开全部学院专业</button>
-      <a class="link-card" href="https://zs.scu.edu.cn/zsxx/zyjs/" target="_blank" rel="noopener">川大官方专业目录 →</a>
+      <a class="link-card" data-link-key="chsi_plan" href="https://gaokao.chsi.com.cn/zsgs/mdgs.jsp" target="_blank" rel="noopener noreferrer">阳光高考 · 分省招生计划 →</a>
     </section>
 
     <!-- 江安导览 -->
@@ -177,7 +193,7 @@
     <footer class="site-footer">
       <p><strong>俊贤学长升学咨询和家教中介</strong></p>
       <p>本网站非四川大学官方招生网站</p>
-      <p>数据来源：<a href="https://zs.scu.edu.cn" target="_blank" rel="noopener">四川大学本科招生网</a></p>
+      <p>官方入口：<a data-link-key="chsi_school" href="https://gaokao.chsi.com.cn/sch/schoolInfo--schId-10610.dhtml" target="_blank" rel="noopener noreferrer">阳光高考</a> · <a data-link-key="scu_zs_home" href="https://zs.scu.edu.cn" target="_blank" rel="noopener noreferrer">川大招生网</a></p>
       <p class="copyright">© 2026 落叶大师 · 版权所有 · 未经授权禁止转载</p>
     </footer>
   </div>

@@ -1,8 +1,11 @@
+import { loadLinks, resolveUrl } from "./links.js";
+
 let colleges = [];
 let allTags = [];
 let showAllMajors = false;
 
 export async function initMajors() {
+  await loadLinks();
   const res = await fetch("data/majors.json");
   const data = await res.json();
   colleges = data.colleges;
@@ -42,7 +45,8 @@ function renderTags() {
 }
 
 function majorMatches(major, query, tag) {
-  const text = `${major.name} ${major.brief || ""} ${(major.tags || []).join(" ")}`.toLowerCase();
+  const inc = (major.includes || []).join(" ");
+  const text = `${major.name} ${major.brief || ""} ${inc} ${major.subjects || ""} ${(major.tags || []).join(" ")}`.toLowerCase();
   if (query && !text.includes(query.toLowerCase())) return false;
   if (tag && !(major.tags || []).includes(tag)) return false;
   if (!showAllMajors && !query && !tag && !major.featured) return false;
@@ -68,7 +72,7 @@ function renderColleges(query = "", tag = "") {
   container.innerHTML = filtered
     .map(
       (col, i) => `
-    <div class="college-group${i < 3 ? " open" : ""}" data-college="${col.name}">
+    <div class="college-group${i < 3 ? " open" : ""}">
       <div class="college-group__header" role="button" tabindex="0">${col.name}<span class="college-group__count">${col.majors.length}</span></div>
       <div class="college-group__body">
         ${col.majors.map(renderMajorCard).join("")}
@@ -91,24 +95,34 @@ function renderColleges(query = "", tag = "") {
 
 function renderMajorCard(major) {
   const featured = major.featured ? " major-card--featured" : "";
-  const linkOnly = !major.featured;
-  if (linkOnly) {
+  const url = resolveUrl(major.urlKey || major.url);
+  const includes = major.includes?.length
+    ? `<p class="major-card__detail">分流专业：${major.includes.join("、")}</p>`
+    : "";
+  const subjects = major.subjects
+    ? `<p class="major-card__detail">选科：${major.subjects}</p>`
+    : "";
+  const campus = major.campus ? `<p class="major-card__detail">就读：${major.campus}校区</p>` : "";
+
+  if (!major.featured && !major.brief && !major.includes?.length) {
     return `
-      <a class="major-card major-card--compact" href="${major.url}" target="_blank" rel="noopener">
+      <a class="major-card major-card--compact" href="${url}" target="_blank" rel="noopener">
         <span class="major-card__name">${major.name}</span>
         <span class="major-card__arrow">→</span>
       </a>`;
   }
+
   return `
     <article class="major-card${featured}">
       <h4 class="major-card__name">${major.name}</h4>
-      <p class="major-card__brief">${major.brief || ""}</p>
-      ${major.career ? `<p class="major-card__detail">去向：${major.career}</p>` : ""}
-      <a class="major-card__link" href="${major.url}" target="_blank" rel="noopener">学院官网 →</a>
+      ${major.brief ? `<p class="major-card__brief">${major.brief}</p>` : ""}
+      ${subjects}${includes}${campus}
+      <a class="major-card__link" href="${url}" target="_blank" rel="noopener">查看招生计划 →</a>
     </article>`;
 }
 
 export async function initPolicies() {
+  await loadLinks();
   const res = await fetch("data/policies.json");
   const data = await res.json();
   const list = document.getElementById("policy-list");
@@ -137,14 +151,18 @@ export async function initPolicies() {
       <div class="policy-group">
         <h3 class="policy-group__title">${cat}</h3>
         ${policies
-          .map(
-            (p) => `
-          <a class="policy-card policy-card--link" href="${p.url}" target="_blank" rel="noopener">
-            <span class="policy-card__year">${p.year}</span>
-            <span class="policy-card__title">${p.title}</span>
+          .map((p) => {
+            const href = resolveUrl(p.urlKey || p.url);
+            return `
+          <a class="policy-card policy-card--link" href="${href}" target="_blank" rel="noopener noreferrer">
+            <div class="policy-card__body">
+              <span class="policy-card__year">${p.year}</span>
+              <span class="policy-card__title">${p.title}</span>
+              <p class="policy-card__summary">${p.summary}</p>
+            </div>
             <span class="policy-card__arrow">→</span>
-          </a>`
-          )
+          </a>`;
+          })
           .join("")}
       </div>`
       )
@@ -193,32 +211,32 @@ export async function initCampus() {
   if (data.pois[0]) showPoi(data.pois[0]);
 
   const note = document.getElementById("campus-feasibility");
-  if (note && data.feasibility) {
-    note.textContent = data.feasibility.summary;
-  }
+  if (note && data.feasibility) note.textContent = data.feasibility.summary;
 }
 
 export async function initFaq() {
+  await loadLinks();
+  const chsi = resolveUrl("chsi_charter");
   const items = [
     {
       q: "2026年川大招生章程在哪看？",
-      a: "四川大学本科招生网 zs.scu.edu.cn 已发布2026年章程，本站政策区可一键跳转。",
+      a: `请通过<a href="${chsi}" target="_blank" rel="noopener">阳光高考招生章程</a>或本站政策区进入，以教育部备案版本为准。`,
+    },
+    {
+      q: "川大还是大类招生吗？",
+      a: "2026年仍以大类招生为主；工科大类培养一年后可任选大类内专业。新增7个本科专业详见专业区。",
     },
     {
       q: "多少分能上川大？",
-      a: "各省差异大，请在本站分数线区选省份查看2022–2024参考线，并结合位次判断。",
+      a: "请使用本站「志愿模拟」结合分数线区数据，并核对阳光高考历年录取分数。",
     },
     {
-      q: "大一在哪个校区？",
-      a: "多数理工科、文科新生在江安校区就读，医学等有特殊安排，以录取通知为准。",
+      q: "高校专项2026怎么报？",
+      a: "2026年高校专项不提前报名、不单独发简章，须达省特控线，详见招生章程第二十四条。",
     },
     {
-      q: "高校专项和国家专项有什么区别？",
-      a: "国家专项面向农村脱贫地区定向招生；高校专项由川大组织，2026年不提前报名，须达省特控线。",
-    },
-    {
-      q: "如何联系俊贤学长咨询？",
-      a: "扫码添加微信，备注「省份+分数」或「家教+年级+科目」。",
+      q: "如何联系俊贤学长？",
+      a: "页面底部扫码添加微信「落叶大师」，备注省份+分数或家教需求。",
     },
   ];
 
@@ -234,4 +252,12 @@ export async function initFaq() {
     </details>`
     )
     .join("");
+}
+
+export async function wireOfficialLinks() {
+  await loadLinks();
+  document.querySelectorAll("[data-link-key]").forEach((el) => {
+    const key = el.getAttribute("data-link-key");
+    if (key && el instanceof HTMLAnchorElement) el.href = resolveUrl(key);
+  });
 }

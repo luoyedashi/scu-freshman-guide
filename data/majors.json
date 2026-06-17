@@ -1,488 +1,156 @@
 {
   "meta": {
-    "source": "https://zs.scu.edu.cn/zsxx/zyjs/",
-    "updated": "2026-06-17"
+    "source": "四川大学2026年本科招生专业目录（章程附件）",
+    "updated": "2026-06-17",
+    "note": "大类招生专业入学后先大类培养再分流；工科大类一年后可在类内任选专业。各省招生计划以阳光高考公布为准。"
   },
-  "tags": ["双一流", "国家级一流专业", "工科", "医学", "文科", "理科", "热门"],
+  "tags": ["大类招生", "拔尖班", "创新班", "新增专业", "工科", "医学", "文科", "理科", "中外合作", "热门"],
   "colleges": [
     {
-      "name": "水利水电学院",
+      "name": "2026年新增本科专业",
       "majors": [
-        {
-          "name": "水利科学与工程",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科", "双一流"],
-          "featured": true,
-          "brief": "培养流域水安全、智慧水利与防灾减灾方向的复合型人才。",
-          "courses": ["水力学", "水文学", "水工建筑物", "水电站", "水资源规划"],
-          "career": "设计院、流域机构、水电企业、继续深造",
-          "url": "https://slsd.scu.edu.cn/"
-        },
-        {
-          "name": "水文与水资源工程",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科"],
-          "featured": false,
-          "brief": "从事水文监测、水资源评价与管理。",
-          "url": "https://slsd.scu.edu.cn/"
-        },
-        {
-          "name": "水利水电工程",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科", "国家级一流专业"],
-          "featured": false,
-          "brief": "水电站与大坝工程设计、施工与管理。",
-          "url": "https://slsd.scu.edu.cn/"
-        }
+        {"name": "半导体工艺与装备", "degree": "工学学士", "duration": "四年", "tags": ["新增专业", "工科", "热门"], "featured": true, "subjects": "物理+化学", "brief": "全国高校首设，服务集成电路产业战略。", "urlKey": "chsi_plan"},
+        {"name": "集成电路设计与集成系统", "degree": "工学学士", "duration": "四年", "tags": ["新增专业", "工科", "热门"], "featured": true, "subjects": "物理+化学", "brief": "覆盖芯片设计到系统集成全产业链。", "urlKey": "chsi_plan"},
+        {"name": "智能建造", "degree": "工学学士", "duration": "四年", "tags": ["新增专业", "工科"], "featured": true, "subjects": "物理+化学", "brief": "土木水利与 BIM、数字孪生、人工智能融合。", "urlKey": "chsi_plan"},
+        {"name": "智能工程与创意设计", "degree": "工学学士", "duration": "四年", "tags": ["新增专业", "工科"], "featured": false, "subjects": "不提科目要求", "brief": "智能产品设计与创新方向。", "urlKey": "chsi_plan"},
+        {"name": "文化遗产", "degree": "历史学学士", "duration": "四年", "tags": ["新增专业", "文科"], "featured": false, "subjects": "不提科目要求", "brief": "文化遗产保护与管理。", "urlKey": "chsi_plan"},
+        {"name": "防灾减灾科学与工程", "degree": "工学学士", "duration": "四年", "tags": ["新增专业", "工科"], "featured": true, "subjects": "物理+化学", "brief": "国家防灾减灾战略急需交叉学科。", "urlKey": "chsi_plan"},
+        {"name": "量子信息科学", "degree": "理学学士", "duration": "四年", "tags": ["新增专业", "理科"], "featured": true, "subjects": "物理+化学", "brief": "对接国家量子科技发展规划。", "urlKey": "chsi_plan"}
       ]
     },
     {
-      "name": "计算机学院",
+      "name": "拔尖班（高考直招，保研率100%）",
       "majors": [
-        {
-          "name": "计算机科学与技术",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科", "热门", "双一流"],
-          "featured": true,
-          "brief": "计算机系统、算法、人工智能与软件工程基础训练。",
-          "courses": ["数据结构", "操作系统", "计算机网络", "机器学习"],
-          "career": "互联网、芯片、人工智能、科研深造",
-          "url": "https://cs.scu.edu.cn/"
-        },
-        {
-          "name": "软件工程",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科", "热门"],
-          "featured": true,
-          "brief": "大型软件系统分析、设计与工程化开发。",
-          "courses": ["软件工程", "数据库", "软件测试", "移动开发"],
-          "career": "软件开发、产品经理、IT 咨询",
-          "url": "https://cs.scu.edu.cn/"
-        },
-        {
-          "name": "人工智能",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科", "热门"],
-          "featured": true,
-          "brief": "机器学习、深度学习与智能系统应用。",
-          "courses": ["机器学习", "深度学习", "计算机视觉", "自然语言处理"],
-          "career": "AI 研发、算法工程师、科研",
-          "url": "https://cs.scu.edu.cn/"
-        }
+        {"name": "化学拔尖班", "tags": ["拔尖班", "理科"], "featured": true, "subjects": "物理+化学", "brief": "基础学科拔尖计划，可保送外校深造。", "urlKey": "chsi_plan"},
+        {"name": "物理学拔尖班", "tags": ["拔尖班", "理科"], "featured": true, "subjects": "物理+化学", "brief": "基础学科拔尖计划。", "urlKey": "chsi_plan"},
+        {"name": "生物科学拔尖班", "tags": ["拔尖班", "理科"], "featured": false, "subjects": "物理+化学", "brief": "", "urlKey": "chsi_plan"},
+        {"name": "基础医学拔尖班", "tags": ["拔尖班", "医学"], "featured": true, "subjects": "物理+化学", "brief": "华西医学相关培养。", "urlKey": "chsi_plan"},
+        {"name": "药学拔尖班", "tags": ["拔尖班", "医学"], "featured": false, "subjects": "物理+化学", "brief": "", "urlKey": "chsi_plan"},
+        {"name": "工程力学拔尖班", "tags": ["拔尖班", "工科"], "featured": false, "subjects": "物理+化学", "brief": "", "urlKey": "chsi_plan"},
+        {"name": "哲学拔尖班", "tags": ["拔尖班", "文科"], "featured": false, "subjects": "不提科目要求", "brief": "", "urlKey": "chsi_plan"},
+        {"name": "中国古典学", "tags": ["拔尖班", "文科"], "featured": false, "subjects": "不提科目要求", "brief": "人文拔尖方向。", "urlKey": "chsi_plan"},
+        {"name": "马克思主义理论", "tags": ["拔尖班", "文科"], "featured": false, "subjects": "思想政治", "brief": "", "urlKey": "chsi_plan"}
       ]
     },
     {
-      "name": "华西临床医学院",
+      "name": "机械工程学院",
       "majors": [
-        {
-          "name": "临床医学",
-          "degree": "医学学士",
-          "duration": "五年",
-          "tags": ["医学", "双一流", "热门"],
-          "featured": true,
-          "brief": "国内顶尖临床医学培养体系，强临床、强科研。",
-          "courses": ["解剖学", "生理学", "内科学", "外科学"],
-          "career": "三甲医院、医学科研、继续攻读硕博",
-          "url": "https://www.hxkq.org/"
-        },
-        {
-          "name": "口腔医学",
-          "degree": "医学学士",
-          "duration": "五年",
-          "tags": ["医学", "双一流"],
-          "featured": true,
-          "brief": "口腔疾病防治与口腔颌面外科训练。",
-          "courses": ["口腔解剖", "牙体牙髓病学", "口腔修复"],
-          "career": "口腔医院、私人诊所、科研",
-          "url": "https://www.hxkq.org/"
-        },
-        {
-          "name": "护理学",
-          "degree": "理学学士",
-          "duration": "四年",
-          "tags": ["医学"],
-          "featured": false,
-          "brief": "临床护理与健康管理。",
-          "url": "https://www.hxkq.org/"
-        }
-      ]
-    },
-    {
-      "name": "经济学院",
-      "majors": [
-        {
-          "name": "经济学",
-          "degree": "经济学学士",
-          "duration": "四年",
-          "tags": ["文科", "热门"],
-          "featured": true,
-          "brief": "宏观经济、微观经济理论与政策分析。",
-          "courses": ["微观经济学", "宏观经济学", "计量经济学", "财政学"],
-          "career": "金融、政府、咨询、学术研究",
-          "url": "https://econ.scu.edu.cn/"
-        },
-        {
-          "name": "金融学",
-          "degree": "经济学学士",
-          "duration": "四年",
-          "tags": ["文科", "热门"],
-          "featured": true,
-          "brief": "金融市场、投资分析与风险管理。",
-          "courses": ["货币银行学", "证券投资学", "公司金融"],
-          "career": "银行、证券、基金、金融科技",
-          "url": "https://econ.scu.edu.cn/"
-        }
-      ]
-    },
-    {
-      "name": "文学与新闻学院",
-      "majors": [
-        {
-          "name": "汉语言文学",
-          "degree": "文学学士",
-          "duration": "四年",
-          "tags": ["文科", "国家级一流专业"],
-          "featured": true,
-          "brief": "中国文学史、语言学与应用写作训练。",
-          "courses": ["古代文学", "现代文学", "语言学概论", "写作"],
-          "career": "教育、出版、媒体、公务员",
-          "url": "https://lj.scu.edu.cn/"
-        },
-        {
-          "name": "新闻学",
-          "degree": "文学学士",
-          "duration": "四年",
-          "tags": ["文科", "热门"],
-          "featured": true,
-          "brief": "新闻采编、新媒体运营与传播理论。",
-          "courses": ["新闻学概论", "传播学", "新闻采访与写作"],
-          "career": "媒体、公关、互联网内容",
-          "url": "https://lj.scu.edu.cn/"
-        },
-        {
-          "name": "广告学",
-          "degree": "文学学士",
-          "duration": "四年",
-          "tags": ["文科"],
-          "featured": false,
-          "brief": "品牌传播与创意策划。",
-          "url": "https://lj.scu.edu.cn/"
-        }
-      ]
-    },
-    {
-      "name": "数学学院",
-      "majors": [
-        {
-          "name": "数学与应用数学",
-          "degree": "理学学士",
-          "duration": "四年",
-          "tags": ["理科", "双一流"],
-          "featured": true,
-          "brief": "数学基础理论与应用数学训练。",
-          "courses": ["数学分析", "高等代数", "概率论", "常微分方程"],
-          "career": "金融量化、数据科学、教育、科研",
-          "url": "https://math.scu.edu.cn/"
-        },
-        {
-          "name": "信息与计算科学",
-          "degree": "理学学士",
-          "duration": "四年",
-          "tags": ["理科", "工科"],
-          "featured": false,
-          "brief": "计算数学与科学计算。",
-          "url": "https://math.scu.edu.cn/"
-        }
-      ]
-    },
-    {
-      "name": "电气工程学院",
-      "majors": [
-        {
-          "name": "电气工程及其自动化",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科", "热门"],
-          "featured": true,
-          "brief": "电力系统、电机与电力电子自动化。",
-          "courses": ["电路分析", "电力系统分析", "电机学", "自动控制"],
-          "career": "电网、新能源、自动化企业",
-          "url": "https://ee.scu.edu.cn/"
-        }
-      ]
-    },
-    {
-      "name": "化学工程学院",
-      "majors": [
-        {
-          "name": "化学工程与工艺",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科"],
-          "featured": false,
-          "brief": "化工过程设计与生产管理。",
-          "url": "https://ce.scu.edu.cn/"
-        },
-        {
-          "name": "制药工程",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科", "医学"],
-          "featured": false,
-          "brief": "药物研发与制药工艺。",
-          "url": "https://ce.scu.edu.cn/"
-        }
-      ]
-    },
-    {
-      "name": "法学院",
-      "majors": [
-        {
-          "name": "法学",
-          "degree": "法学学士",
-          "duration": "四年",
-          "tags": ["文科", "热门"],
-          "featured": true,
-          "brief": "法律理论与实务训练，通过法考后可从事法律职业。",
-          "courses": ["民法", "刑法", "宪法", "行政法"],
-          "career": "律师、法官、检察官、企业法务",
-          "url": "https://law.scu.edu.cn/"
-        }
-      ]
-    },
-    {
-      "name": "公共管理学院",
-      "majors": [
-        {
-          "name": "行政管理",
-          "degree": "管理学学士",
-          "duration": "四年",
-          "tags": ["文科"],
-          "featured": false,
-          "brief": "政府与公共组织管理。",
-          "url": "https://gggl.scu.edu.cn/"
-        },
-        {
-          "name": "信息管理与信息系统",
-          "degree": "管理学学士",
-          "duration": "四年",
-          "tags": ["工科", "文科"],
-          "featured": false,
-          "brief": "信息系统与数据管理。",
-          "url": "https://gggl.scu.edu.cn/"
-        }
-      ]
-    },
-    {
-      "name": "材料科学与工程学院",
-      "majors": [
-        {
-          "name": "材料科学与工程",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科", "双一流"],
-          "featured": true,
-          "brief": "金属材料、高分子与新能源材料研究。",
-          "courses": ["材料科学基础", "物理化学", "材料力学"],
-          "career": "新能源、半导体、材料研发",
-          "url": "https://mse.scu.edu.cn/"
-        }
-      ]
-    },
-    {
-      "name": "匹兹堡学院",
-      "majors": [
-        {
-          "name": "机械设计制造及其自动化（中外合作）",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科", "热门"],
-          "featured": true,
-          "brief": "与匹兹堡大学合作，全英文教学，双注册学籍。",
-          "courses": ["工程力学", "机械设计", "制造工艺"],
-          "career": "制造业、外企、出国深造",
-          "url": "https://scupi.scu.edu.cn/"
-        },
-        {
-          "name": "材料科学与工程（中外合作）",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科"],
-          "featured": false,
-          "brief": "匹兹堡学院材料专业，全英文授课。",
-          "url": "https://scupi.scu.edu.cn/"
-        }
-      ]
-    },
-    {
-      "name": "商学院",
-      "majors": [
-        {
-          "name": "工商管理",
-          "degree": "管理学学士",
-          "duration": "四年",
-          "tags": ["文科", "热门"],
-          "featured": false,
-          "brief": "企业管理、市场营销与人力资源。",
-          "url": "https://bs.scu.edu.cn/"
-        },
-        {
-          "name": "市场营销",
-          "degree": "管理学学士",
-          "duration": "四年",
-          "tags": ["文科"],
-          "featured": false,
-          "brief": "市场调研与品牌管理。",
-          "url": "https://bs.scu.edu.cn/"
-        },
-        {
-          "name": "会计学",
-          "degree": "管理学学士",
-          "duration": "四年",
-          "tags": ["文科", "热门"],
-          "featured": false,
-          "brief": "财务会计、审计与税务。",
-          "url": "https://bs.scu.edu.cn/"
-        }
-      ]
-    },
-    {
-      "name": "物理学院",
-      "majors": [
-        {
-          "name": "物理学",
-          "degree": "理学学士",
-          "duration": "四年",
-          "tags": ["理科", "双一流"],
-          "featured": false,
-          "brief": "理论物理与实验物理基础。",
-          "url": "https://physics.scu.edu.cn/"
-        },
-        {
-          "name": "核工程与核技术",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科", "理科"],
-          "featured": false,
-          "brief": "核能利用与辐射防护。",
-          "url": "https://physics.scu.edu.cn/"
-        }
-      ]
-    },
-    {
-      "name": "生命科学学院",
-      "majors": [
-        {
-          "name": "生物科学",
-          "degree": "理学学士",
-          "duration": "四年",
-          "tags": ["理科", "双一流"],
-          "featured": false,
-          "brief": "分子生物学、生态学与生物技术。",
-          "url": "https://life.scu.edu.cn/"
-        },
-        {
-          "name": "生态学",
-          "degree": "理学学士",
-          "duration": "四年",
-          "tags": ["理科"],
-          "featured": false,
-          "brief": "生态系统保护与修复。",
-          "url": "https://life.scu.edu.cn/"
-        }
-      ]
-    },
-    {
-      "name": "历史文化学院",
-      "majors": [
-        {
-          "name": "历史学",
-          "degree": "历史学学士",
-          "duration": "四年",
-          "tags": ["文科"],
-          "featured": false,
-          "brief": "中国史、世界史研究训练。",
-          "url": "https://history.scu.edu.cn/"
-        },
-        {
-          "name": "考古学",
-          "degree": "历史学学士",
-          "duration": "四年",
-          "tags": ["文科"],
-          "featured": false,
-          "brief": "田野考古与文化遗产保护。",
-          "url": "https://history.scu.edu.cn/"
-        }
-      ]
-    },
-    {
-      "name": "外国语学院",
-      "majors": [
-        {
-          "name": "英语",
-          "degree": "文学学士",
-          "duration": "四年",
-          "tags": ["文科"],
-          "featured": false,
-          "brief": "英语语言文学与翻译。",
-          "url": "https://flc.scu.edu.cn/"
-        },
-        {
-          "name": "日语",
-          "degree": "文学学士",
-          "duration": "四年",
-          "tags": ["文科"],
-          "featured": false,
-          "brief": "日语语言文学。",
-          "url": "https://flc.scu.edu.cn/"
-        },
-        {
-          "name": "法语",
-          "degree": "文学学士",
-          "duration": "四年",
-          "tags": ["文科"],
-          "featured": false,
-          "brief": "法语语言文学。",
-          "url": "https://flc.scu.edu.cn/"
-        }
+        {"name": "工科试验班（智能制造）", "degree": "工学学士", "duration": "四年", "tags": ["大类招生", "工科", "热门"], "featured": true, "subjects": "物理+化学", "brief": "大类培养一年后可任选类内专业。", "includes": ["机械设计制造及其自动化", "测控技术与仪器", "材料成型及控制工程"], "campus": "江安", "urlKey": "chsi_plan"}
       ]
     },
     {
       "name": "建筑与环境学院",
       "majors": [
-        {
-          "name": "建筑学",
-          "degree": "建筑学学士",
-          "duration": "五年",
-          "tags": ["工科", "热门"],
-          "featured": false,
-          "brief": "建筑设计、城市规划与建筑历史。",
-          "url": "https://arch.scu.edu.cn/"
-        },
-        {
-          "name": "环境工程",
-          "degree": "工学学士",
-          "duration": "四年",
-          "tags": ["工科"],
-          "featured": false,
-          "brief": "环境污染治理与生态修复。",
-          "url": "https://arch.scu.edu.cn/"
-        },
-        {
-          "name": "城乡规划",
-          "degree": "工学学士",
-          "duration": "五年",
-          "tags": ["工科"],
-          "featured": false,
-          "brief": "城乡空间规划与设计。",
-          "url": "https://arch.scu.edu.cn/"
-        }
+        {"name": "工科试验班（绿色城市与智慧建造）", "degree": "工学学士", "duration": "四年", "tags": ["大类招生", "工科"], "featured": true, "subjects": "物理+化学", "brief": "大类培养一年后可任选类内专业。", "includes": ["环境工程", "土木工程", "工程力学"], "campus": "江安", "urlKey": "chsi_plan"},
+        {"name": "建筑学", "degree": "工学学士", "duration": "五年", "tags": ["工科"], "featured": false, "subjects": "物理+化学", "brief": "五年制，按省计划单列招生。", "campus": "江安", "urlKey": "chsi_plan"}
+      ]
+    },
+    {
+      "name": "水利水电学院",
+      "majors": [
+        {"name": "工科试验班（清洁能源与智慧建造）", "degree": "工学学士", "duration": "四年", "tags": ["大类招生", "工科", "热门"], "featured": true, "subjects": "物理+化学", "brief": "大类培养一年后可任选类内专业。", "includes": ["水利科学与工程", "城市地下空间工程", "能源与动力工程"], "campus": "江安", "urlKey": "chsi_plan"}
+      ]
+    },
+    {
+      "name": "化学工程学院",
+      "majors": [
+        {"name": "工科试验班（先进化工与高端装备类）", "degree": "工学学士", "duration": "四年", "tags": ["大类招生", "工科", "热门"], "featured": true, "subjects": "物理+化学", "brief": "含互联化工交叉试验班（创新班）；大类一年后可任选类内专业。", "includes": ["化学工程与工艺", "制药工程", "生物工程", "化学工程与工艺（互联化工交叉试验班）", "过程装备与控制工程"], "campus": "江安", "urlKey": "chsi_plan"}
+      ]
+    },
+    {
+      "name": "轻工科学与工程学院",
+      "majors": [
+        {"name": "工科试验班（先进低碳材料与食品健康）", "degree": "工学学士", "duration": "四年", "tags": ["大类招生", "工科"], "featured": false, "subjects": "物理+化学", "brief": "大类培养一年后可任选类内专业。", "includes": ["生物质技术与工程", "食品科学与工程", "生物工程（轻工生物方向）"], "campus": "江安", "urlKey": "chsi_plan"}
+      ]
+    },
+    {
+      "name": "计算机学院 / 软件学院",
+      "majors": [
+        {"name": "计算机类", "degree": "工学学士", "duration": "四年", "tags": ["热门", "工科", "大类招生"], "featured": true, "subjects": "物理+化学", "brief": "分流前统一按计算机类 6500 元/学年收费。", "includes": ["计算机科学与技术", "计算机科学与技术（计算与金融双学士学位）", "人工智能"], "campus": "江安", "urlKey": "cs_scu"},
+        {"name": "软件工程", "degree": "工学学士", "duration": "四年", "tags": ["热门", "工科"], "featured": true, "subjects": "物理+化学", "brief": "分流后软件工程按 9960 元/学年收费。", "campus": "江安", "urlKey": "cs_scu"}
+      ]
+    },
+    {
+      "name": "电气工程学院",
+      "majors": [
+        {"name": "电气类", "tags": ["工科", "热门", "大类招生"], "featured": true, "subjects": "物理+化学", "brief": "含电气工程及其自动化、自动化。", "includes": ["电气工程及其自动化", "自动化"], "campus": "江安", "urlKey": "chsi_plan"}
+      ]
+    },
+    {
+      "name": "电子信息学院",
+      "majors": [
+        {"name": "电子信息类", "tags": ["工科", "热门", "大类招生"], "featured": true, "subjects": "物理+化学", "brief": "", "includes": ["电子信息工程", "光电信息科学与工程", "通信工程"], "campus": "江安", "urlKey": "chsi_plan"}
+      ]
+    },
+    {
+      "name": "材料科学与工程学院 / 高分子学院",
+      "majors": [
+        {"name": "材料类（先进材料与新能源）", "tags": ["工科", "大类招生"], "featured": false, "subjects": "物理+化学", "brief": "", "includes": ["新能源材料与器件", "材料科学与工程"], "campus": "江安", "urlKey": "chsi_plan"},
+        {"name": "高分子材料与工程", "tags": ["工科"], "featured": false, "subjects": "物理+化学", "brief": "高分子科学与工程学院。", "campus": "江安", "urlKey": "chsi_plan"}
+      ]
+    },
+    {
+      "name": "数学学院 / 物理学院 / 化学学院 / 生命科学学院",
+      "majors": [
+        {"name": "数学类", "tags": ["理科", "大类招生"], "featured": true, "subjects": "物理+化学", "brief": "", "includes": ["数学与应用数学", "信息与计算科学", "统计学"], "urlKey": "chsi_plan"},
+        {"name": "物理学类", "tags": ["理科", "大类招生"], "featured": false, "subjects": "物理+化学", "brief": "", "includes": ["物理学", "核工程与核技术", "微电子科学与工程"], "urlKey": "chsi_plan"},
+        {"name": "化学类", "tags": ["理科", "大类招生"], "featured": false, "subjects": "物理+化学", "brief": "色弱考生建议谨慎报考。", "includes": ["化学", "应用化学"], "urlKey": "chsi_plan"},
+        {"name": "生物科学类", "tags": ["理科", "大类招生"], "featured": false, "subjects": "物理+化学", "brief": "", "includes": ["生物科学", "生态学"], "urlKey": "chsi_plan"}
+      ]
+    },
+    {
+      "name": "华西医学",
+      "majors": [
+        {"name": "医学试验班（医学基础与法医学）", "tags": ["医学", "大类招生"], "featured": false, "subjects": "物理+化学", "brief": "华西基础医学与法医学院。", "includes": ["基础医学", "法医学"], "urlKey": "chsi_plan"},
+        {"name": "临床医学（五年制）", "degree": "医学学士", "duration": "五年", "tags": ["医学", "热门"], "featured": true, "subjects": "物理+化学", "brief": "华西临床医学院，江安就读后进入华西校区。", "urlKey": "wch_clinical"},
+        {"name": "医学技术类", "tags": ["医学", "大类招生"], "featured": false, "subjects": "物理+化学", "brief": "含医学检验技术、医学影像技术、眼视光学、康复治疗学。", "includes": ["医学检验技术", "医学影像技术", "眼视光学", "康复治疗学"], "urlKey": "wch_clinical"},
+        {"name": "口腔医学（五年制）", "degree": "医学学士", "duration": "五年", "tags": ["医学", "热门"], "featured": true, "subjects": "物理+化学", "brief": "华西口腔医学院；左利手考生谨慎报考。", "urlKey": "hx_oral"},
+        {"name": "口腔医学技术", "tags": ["医学"], "featured": false, "subjects": "物理+化学", "brief": "四年制。", "urlKey": "hx_oral"},
+        {"name": "公共卫生与预防医学类", "tags": ["医学", "大类招生"], "featured": false, "subjects": "物理+化学", "brief": "华西公共卫生学院。", "includes": ["卫生检验与检疫", "食品卫生与营养学", "预防医学"], "urlKey": "chsi_plan"},
+        {"name": "药学类", "tags": ["医学", "大类招生"], "featured": true, "subjects": "物理+化学", "brief": "华西药学院。", "includes": ["药学", "临床药学"], "urlKey": "chsi_plan"}
+      ]
+    },
+    {
+      "name": "生物医学工程学院",
+      "majors": [
+        {"name": "生物医学工程类", "tags": ["工科", "大类招生"], "featured": false, "subjects": "物理+化学", "brief": "", "includes": ["生物医学工程", "医学信息工程"], "campus": "江安", "urlKey": "chsi_plan"}
+      ]
+    },
+    {
+      "name": "经济学院 / 法学院 / 商学院",
+      "majors": [
+        {"name": "金融学类", "tags": ["文科", "理科", "大类招生"], "featured": true, "subjects": "不提科目要求", "brief": "经济学院，理工类招生单元。", "includes": ["金融学", "金融工程"], "urlKey": "chsi_plan"},
+        {"name": "经济学类", "tags": ["文科", "热门", "大类招生"], "featured": true, "subjects": "不提科目要求", "brief": "文理兼收。", "includes": ["国际经济与贸易", "经济学", "国民经济管理", "财政学"], "urlKey": "chsi_plan"},
+        {"name": "法学", "tags": ["文科", "热门"], "featured": true, "subjects": "不提科目要求", "brief": "法学院，文理兼收。", "urlKey": "chsi_plan"},
+        {"name": "管理科学与工程类", "tags": ["工科", "大类招生"], "featured": false, "subjects": "物理+化学", "brief": "商学院。", "includes": ["管理科学", "工业工程"], "urlKey": "chsi_plan"},
+        {"name": "工商管理类", "tags": ["文科", "大类招生"], "featured": false, "subjects": "不提科目要求", "brief": "含会计学（ACCA），ACCA 专项培训费另计。", "includes": ["市场营销", "人力资源管理", "财务管理", "会计学（ACCA）"], "urlKey": "chsi_plan"}
+      ]
+    },
+    {
+      "name": "文学与新闻学院 / 外国语学院 / 历史文化学院",
+      "majors": [
+        {"name": "人文科学试验班（中文与新闻传播）", "tags": ["文科", "大类招生", "热门"], "featured": true, "subjects": "不提科目要求", "brief": "文学与新闻学院，文理兼收。", "includes": ["汉语言文学", "汉语国际教育", "新闻学", "广告学", "网络与新媒体"], "urlKey": "chsi_plan"},
+        {"name": "外国语言文学类", "tags": ["文科", "大类招生"], "featured": false, "subjects": "不提科目要求", "brief": "含英语、日语、俄语、法语、西班牙语。", "includes": ["英语", "日语", "俄语", "法语", "西班牙语"], "urlKey": "chsi_plan"},
+        {"name": "历史学类", "tags": ["文科", "大类招生"], "featured": false, "subjects": "不提科目要求", "brief": "", "includes": ["历史学", "考古学", "文物与博物馆学"], "urlKey": "chsi_plan"},
+        {"name": "旅游管理类", "tags": ["文科", "大类招生"], "featured": false, "subjects": "不提科目要求", "brief": "", "includes": ["旅游管理", "会展经济与管理"], "urlKey": "chsi_plan"}
+      ]
+    },
+    {
+      "name": "公共管理学院",
+      "majors": [
+        {"name": "公共管理类", "tags": ["文科", "大类招生"], "featured": false, "subjects": "不提科目要求", "brief": "含信息资源管理、档案学方向。", "includes": ["行政管理", "劳动与社会保障", "土地资源管理", "信息资源管理", "社会工作"], "urlKey": "chsi_plan"}
+      ]
+    },
+    {
+      "name": "中外合作办学",
+      "majors": [
+        {"name": "四川大学匹兹堡学院", "tags": ["中外合作", "工科"], "featured": true, "subjects": "物理+化学", "brief": "机械、材料等，全英文教学，入校后不能转专业。", "includes": ["机械设计制造及其自动化", "材料科学与工程", "工业设计"], "urlKey": "scupi"},
+        {"name": "电气工程及其自动化（中德合作）", "tags": ["中外合作", "工科"], "featured": true, "subjects": "物理+化学", "brief": "与德国克劳斯塔尔工业大学合作，入校后不能转专业。", "urlKey": "chsi_plan"},
+        {"name": "计算机科学与技术（中外合作办学）", "tags": ["中外合作", "工科", "热门"], "featured": true, "subjects": "物理+化学", "brief": "奥克兰学院，仅限学院内转专业。", "urlKey": "chsi_plan"},
+        {"name": "人工智能（中外合作办学）", "tags": ["中外合作", "工科", "热门"], "featured": true, "subjects": "物理+化学", "brief": "奥克兰学院。", "urlKey": "chsi_plan"},
+        {"name": "电子信息工程（中外合作办学）", "tags": ["中外合作", "工科"], "featured": false, "subjects": "物理+化学", "brief": "奥克兰学院。", "urlKey": "chsi_plan"},
+        {"name": "机械设计制造及其自动化（中外合作办学）", "tags": ["中外合作", "工科"], "featured": false, "subjects": "物理+化学", "brief": "奥克兰学院。", "urlKey": "chsi_plan"},
+        {"name": "材料科学与工程（中外合作办学）", "tags": ["中外合作", "工科"], "featured": false, "subjects": "物理+化学", "brief": "奥克兰学院。", "urlKey": "chsi_plan"}
       ]
     }
   ]
