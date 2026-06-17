@@ -1,0 +1,71 @@
+{
+  "province": "陕西",
+  "records": [
+    {
+      "year": 2024,
+      "province": "陕西",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 488,
+      "min_score": 593,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2024,
+      "province": "陕西",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 475,
+      "min_score": 617,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2023,
+      "province": "陕西",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 489,
+      "min_score": 571,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2023,
+      "province": "陕西",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 443,
+      "min_score": 603,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "陕西",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 484,
+      "min_score": 558,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "陕西",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 449,
+      "min_score": 591,
+      "min_rank": null,
+      "note": ""
+    }
+  ]
+}

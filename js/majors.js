@@ -103,6 +103,10 @@ function renderMajorCard(major) {
     ? `<p class="major-card__detail">选科：${major.subjects}</p>`
     : "";
   const campus = major.campus ? `<p class="major-card__detail">就读：${major.campus}校区</p>` : "";
+  const stream = major.streamRule ? `<p class="major-card__detail">分流：${major.streamRule}</p>` : "";
+  const transfer = major.transferRule
+    ? `<p class="major-card__detail major-card__detail--warn">转专业：${major.transferRule}</p>`
+    : "";
 
   if (!major.featured && !major.brief && !major.includes?.length) {
     return `
@@ -116,7 +120,7 @@ function renderMajorCard(major) {
     <article class="major-card${featured}">
       <h4 class="major-card__name">${major.name}</h4>
       ${major.brief ? `<p class="major-card__brief">${major.brief}</p>` : ""}
-      ${subjects}${includes}${campus}
+      ${subjects}${includes}${campus}${stream}${transfer}
       <a class="major-card__link" href="${url}" target="_blank" rel="noopener">查看招生计划 →</a>
     </article>`;
 }

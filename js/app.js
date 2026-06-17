@@ -1,16 +1,19 @@
 import { initScores } from "./scores.js";
 import { initMajors, initPolicies, initCampus, initFaq, wireOfficialLinks } from "./majors.js";
 import { initSimulator } from "./simulator.js";
+import { initProfileUI, syncHeroProvince } from "./profile-ui.js";
+import { initPaths } from "./paths.js";
+import { initChecklists } from "./checklists.js";
+import { initCommunity, initSiteMeta, initPostAdmission } from "./site-meta.js";
+import { initRouter } from "./router.js";
 
 const SECTIONS = [
   { id: "section-hero", tab: "首页" },
-  { id: "section-guide", tab: "26届" },
+  { id: "section-profile", tab: "档案" },
   { id: "section-simulator", tab: "模拟" },
+  { id: "section-paths", tab: "路径" },
   { id: "section-scores", tab: "分数线" },
-  { id: "section-policies", tab: "政策" },
   { id: "section-majors", tab: "专业" },
-  { id: "section-campus", tab: "江安" },
-  { id: "section-services", tab: "服务" },
   { id: "section-community", tab: "新生群" },
   { id: "section-contact", tab: "联系" },
 ];
@@ -116,21 +119,48 @@ function initCountdown() {
   setInterval(tick, 3600000);
 }
 
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+  navigator.serviceWorker.register("sw.js").catch(() => {});
+}
+
+async function populateProfileProvinces() {
+  const sel = document.getElementById("profile-province");
+  if (!sel || sel.options.length > 1) return;
+  try {
+    const index = await fetch("data/scores_index.json").then((r) => r.json());
+    const list = index.provinces || [];
+    sel.innerHTML = list
+      .map((p) => `<option value="${p}">${p}</option>`)
+      .join("");
+  } catch { /* scores.js will fill */ }
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   buildNav();
+  initRouter();
   initScrollSpy();
   initQuickGrid();
   initServiceTabs();
   initFab();
   initCountdown();
+  registerServiceWorker();
+
+  await populateProfileProvinces();
 
   await Promise.all([
     wireOfficialLinks(),
-    initScores(),
+    initSiteMeta(),
+    initProfileUI(),
+    initScores().then(() => syncHeroProvince()),
     initPolicies(),
     initMajors(),
     initCampus(),
     initFaq(),
     initSimulator(),
+    initPaths(),
+    initChecklists(),
+    initCommunity(),
+    initPostAdmission(),
   ]);
 });

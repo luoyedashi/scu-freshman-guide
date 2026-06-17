@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600&display=swap");
+/* Noto fonts removed — use system stack for China WeChat performance */
 
 *,
 *::before,
@@ -1496,5 +1496,298 @@ a {
 
   .contact-card:active {
     transform: scale(0.99);
+  }
+}
+
+/* ── Profile ── */
+.profile-form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.profile-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.profile-form select,
+.profile-form input {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+}
+
+.profile-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--scu-gold-light);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+}
+
+.profile-banner__btn {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  background: var(--scu-red);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.data-trust {
+  margin-top: 16px;
+  padding: 12px;
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border-light);
+}
+
+.trust-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 12px;
+}
+
+.trust-row:last-child {
+  border-bottom: none;
+}
+
+.trust-row__label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.trust-row__meta {
+  color: var(--text-muted);
+}
+
+.section--profile {
+  background: linear-gradient(180deg, var(--bg-page) 0%, #fff 100%);
+}
+
+/* ── Paths & checklists ── */
+.path-card {
+  margin-bottom: 8px;
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.path-card__title {
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.path-card__body {
+  padding: 0 14px 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.path-card__body p {
+  margin: 0 0 8px;
+}
+
+.path-card__warn {
+  color: var(--scu-red-dark);
+}
+
+.path-card__link {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.checklist {
+  margin-bottom: 16px;
+  padding: 14px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.checklist__title {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.checklist__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checklist__items label {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 8px 0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.checklist__req {
+  font-style: normal;
+  font-size: 10px;
+  color: var(--scu-red);
+  font-weight: 700;
+}
+
+.checklist__progress {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 8px 0;
+}
+
+/* ── Gradient table ── */
+.grad-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.grad-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  background: #fff;
+}
+
+.grad-table th,
+.grad-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border-light);
+  text-align: left;
+  vertical-align: top;
+}
+
+.grad-table th {
+  background: var(--bg-page);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.grad-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.sim-details {
+  margin-bottom: 12px;
+}
+
+.sim-details summary {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.btn-share {
+  margin-top: 8px;
+}
+
+.subsection-title {
+  font-size: 15px;
+  margin: 16px 0 10px;
+  color: var(--scu-red-dark);
+}
+
+.timeline__what small {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.empty-state--error {
+  padding: 16px;
+  text-align: center;
+}
+
+.btn-retry {
+  margin-top: 10px;
+}
+
+.major-card__detail--warn {
+  color: var(--scu-red-dark);
+}
+
+.qr-frame--expired img {
+  opacity: 0.35;
+  filter: grayscale(1);
+}
+
+.community-card__expire--warn {
+  color: var(--scu-red);
+  font-weight: 600;
+}
+
+.legal-page {
+  padding: 20px 16px 40px;
+}
+
+.legal-page__head a {
+  font-size: 14px;
+}
+
+.legal-page__head h1 {
+  font-size: 20px;
+  margin: 12px 0 4px;
+}
+
+.legal-page__updated {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.legal-block {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.legal-block h2 {
+  font-size: 16px;
+  margin: 0 0 10px;
+  color: var(--scu-red-dark);
+}
+
+.legal-block p,
+.legal-block li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+@media (min-width: 600px) {
+  .profile-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .profile-form button[type="submit"] {
+    grid-column: 1 / -1;
   }
 }

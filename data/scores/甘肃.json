@@ -1,0 +1,71 @@
+{
+  "province": "甘肃",
+  "records": [
+    {
+      "year": 2024,
+      "province": "甘肃",
+      "exam_mode": "新高考",
+      "category": "历史",
+      "batch": "本科批",
+      "control_line": 502,
+      "min_score": 616,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2024,
+      "province": "甘肃",
+      "exam_mode": "新高考",
+      "category": "物理",
+      "batch": "本科批",
+      "control_line": 488,
+      "min_score": 618,
+      "min_rank": null,
+      "note": "物理+化学组"
+    },
+    {
+      "year": 2023,
+      "province": "甘肃",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 488,
+      "min_score": 582,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2023,
+      "province": "甘肃",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 433,
+      "min_score": 589,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "甘肃",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 485,
+      "min_score": 543,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "甘肃",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 440,
+      "min_score": 543,
+      "min_rank": null,
+      "note": ""
+    }
+  ]
+}

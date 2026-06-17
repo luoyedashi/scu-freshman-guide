@@ -1,0 +1,49 @@
+{
+  "province": "上海",
+  "records": [
+    {
+      "year": 2024,
+      "province": "上海",
+      "exam_mode": "新高考",
+      "category": "综合",
+      "batch": "本科批",
+      "control_line": 503,
+      "min_score": 561,
+      "min_rank": null,
+      "note": "不提科目要求组"
+    },
+    {
+      "year": 2024,
+      "province": "上海",
+      "exam_mode": "新高考",
+      "category": "物理",
+      "batch": "本科批",
+      "control_line": 503,
+      "min_score": 571,
+      "min_rank": null,
+      "note": "物理+化学组"
+    },
+    {
+      "year": 2023,
+      "province": "上海",
+      "exam_mode": "新高考",
+      "category": "综合",
+      "batch": "本科批",
+      "control_line": 504,
+      "min_score": 567,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "上海",
+      "exam_mode": "新高考",
+      "category": "综合",
+      "batch": "本科批",
+      "control_line": 503,
+      "min_score": 556,
+      "min_rank": null,
+      "note": ""
+    }
+  ]
+}

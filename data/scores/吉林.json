@@ -1,0 +1,71 @@
+{
+  "province": "吉林",
+  "records": [
+    {
+      "year": 2024,
+      "province": "吉林",
+      "exam_mode": "新高考",
+      "category": "历史",
+      "batch": "本科批",
+      "control_line": 479,
+      "min_score": 602,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2024,
+      "province": "吉林",
+      "exam_mode": "新高考",
+      "category": "物理",
+      "batch": "本科批",
+      "control_line": 483,
+      "min_score": 618,
+      "min_rank": null,
+      "note": "物理+化学组"
+    },
+    {
+      "year": 2023,
+      "province": "吉林",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 485,
+      "min_score": 540,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2023,
+      "province": "吉林",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 463,
+      "min_score": 560,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "吉林",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 511,
+      "min_score": 541,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "吉林",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 488,
+      "min_score": 548,
+      "min_rank": null,
+      "note": ""
+    }
+  ]
+}

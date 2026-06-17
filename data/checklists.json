@@ -1,0 +1,40 @@
+{
+  "meta": { "updated": "2026-06-17" },
+  "checklists": [
+    {
+      "id": "qiangji",
+      "title": "强基计划 · 我适合吗？",
+      "items": [
+        {"text": "对基础学科（数理化生等）有长期兴趣，不仅为了「低分上名校」", "required": true},
+        {"text": "能接受本硕博衔接或长学制培养，不急于本科毕业即就业", "required": true},
+        {"text": "愿意参加校测（含面试、体测等），并完成4月前后报名", "required": true},
+        {"text": "了解录取后一般不能转专业、退出机制", "required": true},
+        {"text": "已有省一、五大学科奥赛等竞赛背景（加分项，非必须）", "required": false}
+      ],
+      "urlKey": "scu_qiangji_charter"
+    },
+    {
+      "id": "gaoxiao",
+      "title": "高校专项 · 条件自查",
+      "items": [
+        {"text": "户籍、学籍在农村或脱贫地区，符合本省高校专项实施区域", "required": true},
+        {"text": "已报高考且成绩预计达到本省特殊类型招生控制线（原一本线）", "required": true},
+        {"text": "了解2026年川大高校专项不提前报名、不单独发简章", "required": true},
+        {"text": "已在阳光高考平台完成高校专项资格名单公示核对", "required": true},
+        {"text": "志愿填报时在对应批次填报川大高校专项计划", "required": true}
+      ],
+      "urlKey": "charter_mirror_2026"
+    },
+    {
+      "id": "guojia",
+      "title": "国家专项 · 条件自查",
+      "items": [
+        {"text": "户籍、学籍符合国家专项实施区域要求（以省考试院文件为准）", "required": true},
+        {"text": "已了解国家专项单设批次或专项计划投档规则", "required": true},
+        {"text": "关注川大在国家专项中的分省计划数", "required": true},
+        {"text": "注意专项计划专业范围可能与普通批不同", "required": false}
+      ],
+      "urlKey": "chsi_plan"
+    }
+  ]
+}

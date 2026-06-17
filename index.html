@@ -35,12 +35,33 @@
       <div class="hero__countdown" id="gaokao-countdown">距 2026 高考</div>
       <div class="hero__banner" role="img" aria-label="四川大学"></div>
       <p class="hero__trust" id="scores-updated">分数线数据来源于阳光高考 · 仅供参考</p>
+      <div class="profile-banner" id="profile-banner" hidden></div>
+    </section>
+
+    <!-- 我的档案 -->
+    <section class="section section--compact section--profile" id="section-profile">
+      <header class="section__header">
+        <span class="section__tag">我的档案</span>
+        <h2 class="section__title">保存省份与位次</h2>
+        <p class="section__desc">一次填写，全站分数线与模拟器自动联动</p>
+      </header>
+      <form class="profile-form" id="profile-form">
+        <label>省份<select id="profile-province" required><option>四川</option></select></label>
+        <label>科类<select id="profile-category" required>
+          <option value="物理">物理类</option>
+          <option value="历史">历史类</option>
+        </select></label>
+        <label>全省位次（可选）<input type="number" id="profile-rank" min="1" max="200000" placeholder="出分后填写"></label>
+        <button type="submit" class="sim-form__btn">保存并更新</button>
+      </form>
+      <button type="button" class="btn-outline" id="profile-copy-consult">复制咨询话术</button>
+      <div class="data-trust" id="data-trust-panel"></div>
     </section>
 
     <div class="quick-grid" role="navigation">
       <div class="quick-item" data-scroll="section-simulator" tabindex="0"><span class="quick-item__icon">🎯</span><span class="quick-item__label">模拟</span></div>
       <div class="quick-item" data-scroll="section-scores" tabindex="0"><span class="quick-item__icon">📊</span><span class="quick-item__label">分数线</span></div>
-      <div class="quick-item" data-scroll="section-policies" tabindex="0"><span class="quick-item__icon">📋</span><span class="quick-item__label">简章</span></div>
+      <div class="quick-item" data-scroll="section-profile" tabindex="0"><span class="quick-item__icon">📝</span><span class="quick-item__label">档案</span></div>
       <div class="quick-item" data-scroll="section-majors" tabindex="0"><span class="quick-item__icon">🎓</span><span class="quick-item__label">专业</span></div>
       <div class="quick-item" data-scroll="section-community" tabindex="0"><span class="quick-item__icon">👥</span><span class="quick-item__label">新生群</span></div>
       <div class="quick-item" data-scroll="section-contact" tabindex="0"><span class="quick-item__icon">💬</span><span class="quick-item__label">咨询</span></div>
@@ -81,6 +102,25 @@
         <button type="submit" class="sim-form__btn">开始评估</button>
       </form>
       <div id="sim-result" class="sim-result" aria-live="polite"></div>
+    </section>
+
+    <!-- 进校路径 -->
+    <section class="section section--compact" id="section-paths">
+      <header class="section__header">
+        <span class="section__tag">路径</span>
+        <h2 class="section__title">进川大有哪些路？</h2>
+        <p class="section__desc">普通批、强基、专项、中外合作等路径一览</p>
+      </header>
+      <div id="paths-list"></div>
+    </section>
+
+    <!-- 专项自查 -->
+    <section class="section section--compact" id="section-checklists">
+      <header class="section__header">
+        <span class="section__tag">自查</span>
+        <h2 class="section__title">强基 / 专项 · 我适合吗？</h2>
+      </header>
+      <div id="checklists-root"></div>
     </section>
 
     <!-- 分数线 -->
@@ -126,16 +166,17 @@
       <a class="link-card" data-link-key="chsi_plan" href="https://gaokao.chsi.com.cn/zsgs/mdgs.jsp" target="_blank" rel="noopener noreferrer">阳光高考 · 分省招生计划 →</a>
     </section>
 
-    <!-- 江安导览 -->
+    <!-- 江安导览 + 录取后 -->
     <section class="section" id="section-campus">
       <header class="section__header">
         <span class="section__tag">江安校区</span>
-        <h2 class="section__title">校园导览 · Beta</h2>
+        <h2 class="section__title">校园导览 · 录取后指南</h2>
         <p class="section__desc" id="campus-feasibility"></p>
       </header>
       <div class="campus-map" id="campus-map"></div>
       <div class="campus-detail" id="campus-detail"></div>
-      <p class="section__desc">完整版可接入地图 API、步行导航与 360° 全景，欢迎录取后联系我们做深度导览。</p>
+      <h3 class="subsection-title">录取后时间线</h3>
+      <div id="post-admission"></div>
     </section>
 
     <!-- FAQ -->
@@ -190,10 +231,10 @@
         <h3 class="community-card__name">俊贤信息资源分享群</h3>
         <p class="community-card__sub">与 2026 届考生、川大学长实时交流</p>
         <figure class="qr-frame qr-frame--large">
-          <img src="assets/brand/freshman-group-qr.png" alt="俊贤信息资源分享群二维码" width="240" height="240" loading="lazy">
+          <img id="community-qr-img" src="assets/brand/freshman-group-qr.png" alt="俊贤信息资源分享群二维码" width="240" height="240" loading="lazy">
         </figure>
         <p class="qr-hint">微信内长按识别二维码 · 加入群聊</p>
-        <p class="community-card__expire">群二维码 7 天内有效，过期请联系学长更新</p>
+        <p class="community-card__expire" id="community-expire">加载中…</p>
       </div>
     </section>
 
@@ -238,6 +279,7 @@
       <p><strong>俊贤学长升学咨询和家教中介</strong></p>
       <p>本网站非四川大学官方招生网站</p>
       <p>官方入口：<a data-link-key="scu_official" href="https://www.scu.edu.cn/" target="_blank" rel="noopener noreferrer">四川大学官网</a> · <a data-link-key="scu_zs_home" href="https://zs.scu.edu.cn/" target="_blank" rel="noopener noreferrer">本科招生网</a> · <a data-link-key="chsi_school" href="https://gaokao.chsi.com.cn/sch/schoolInfo--schId-10610.dhtml" target="_blank" rel="noopener noreferrer">阳光高考</a></p>
+      <p><a href="legal.html">免责声明 · 隐私说明 · 数据来源</a></p>
       <p class="copyright">© 2026 落叶大师 · 版权所有 · 未经授权禁止转载</p>
     </footer>
   </div>

@@ -1,0 +1,71 @@
+{
+  "province": "湖北",
+  "records": [
+    {
+      "year": 2024,
+      "province": "湖北",
+      "exam_mode": "新高考",
+      "category": "历史",
+      "batch": "本科批",
+      "control_line": 530,
+      "min_score": 606,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2024,
+      "province": "湖北",
+      "exam_mode": "新高考",
+      "category": "物理",
+      "batch": "本科批",
+      "control_line": 525,
+      "min_score": 634,
+      "min_rank": null,
+      "note": "物理+化学组"
+    },
+    {
+      "year": 2023,
+      "province": "湖北",
+      "exam_mode": "新高考",
+      "category": "历史",
+      "batch": "本科批",
+      "control_line": 426,
+      "min_score": 612,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2023,
+      "province": "湖北",
+      "exam_mode": "新高考",
+      "category": "物理",
+      "batch": "本科批",
+      "control_line": 424,
+      "min_score": 626,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "湖北",
+      "exam_mode": "新高考",
+      "category": "历史",
+      "batch": "本科批",
+      "control_line": 435,
+      "min_score": 599,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "湖北",
+      "exam_mode": "新高考",
+      "category": "物理",
+      "batch": "本科批",
+      "control_line": 409,
+      "min_score": 599,
+      "min_rank": null,
+      "note": ""
+    }
+  ]
+}

@@ -1,8 +1,17 @@
-/** @typedef {{ year: number; province: string; category: string; batch: string; control_line: number|null; min_score: number|null; min_rank: number|null; note: string; exam_mode: string }} ScoreRecord */
+/** Score data with per-province lazy loading. */
 
 import { loadLinks, officialUrl } from "./links.js";
+import { fetchJson, renderFetchError } from "./fetchUtil.js";
+import { getProfile, onProfileChange, scoreCategoryFor } from "./profile.js";
 
+/** @type {import('./profile.js').ScoreRecord[]} */
 let allRecords = [];
+/** @type {string[]} */
+let provinceList = [];
+/** @type {Record<string, unknown>|null} */
+let scoresMeta = null;
+/** @type {Set<string>} */
+const loadedProvinces = new Set();
 
 const filters = {
   province: "四川",
@@ -22,58 +31,98 @@ const PROVINCE_MODES = {
 
 export async function initScores() {
   await loadLinks();
-  const res = await fetch("data/scores.json");
-  const data = await res.json();
-  allRecords = data.records;
+  const profile = getProfile();
+  filters.province = profile.province || "四川";
 
-  const metaEl = document.getElementById("scores-updated");
-  if (metaEl && data.meta) {
-    const n = data.meta.provinces_covered?.length ?? 0;
-    metaEl.textContent = `数据更新：${data.meta.updated} · 覆盖 ${n} 省 · 来源：阳光高考录取数据`;
+  try {
+    const index = await fetchJson("data/scores_index.json");
+    scoresMeta = index.meta;
+    provinceList = index.provinces || [];
+    await loadProvince(filters.province);
+    updateMetaDisplay();
+  } catch {
+    const data = await fetchJson("data/scores.json");
+    allRecords = data.records;
+    scoresMeta = data.meta;
+    provinceList = provinces();
+    loadedProvinces.add("*");
+    updateMetaDisplay();
   }
 
   buildProvinceSelect();
   syncProvinceUI();
   renderScores();
 
-  document.getElementById("province-go")?.addEventListener("click", () => {
+  document.getElementById("province-go")?.addEventListener("click", async () => {
     const sel = /** @type {HTMLSelectElement} */ (document.getElementById("hero-province"));
     if (sel?.value) {
       filters.province = sel.value;
+      await loadProvince(filters.province);
       syncProvinceUI();
       document.getElementById("section-scores")?.scrollIntoView({ behavior: "smooth" });
       renderScores();
     }
   });
+
+  onProfileChange(async (p) => {
+    filters.province = p.province;
+    await loadProvince(p.province);
+    syncProvinceUI();
+    renderScores();
+  });
+
+  window.addEventListener("profile:saved", async () => {
+    const p = getProfile();
+    filters.province = p.province;
+    filters.category = scoreCategoryFor(p.province, p.category);
+    await loadProvince(p.province);
+    syncProvinceUI();
+    renderScores();
+  });
+}
+
+async function loadProvince(province) {
+  if (loadedProvinces.has(province) || loadedProvinces.has("*")) return;
+  const data = await fetchJson(`data/scores/${encodeURIComponent(province)}.json`);
+  allRecords = allRecords.filter((r) => r.province !== province).concat(data.records);
+  loadedProvinces.add(province);
+}
+
+function updateMetaDisplay() {
+  const metaEl = document.getElementById("scores-updated");
+  if (metaEl && scoresMeta) {
+    const n = provinceList.length || scoresMeta.provinces_covered?.length || 31;
+    metaEl.textContent = `数据更新：${scoresMeta.updated} · 覆盖 ${n} 省 · 来源：阳光高考`;
+  }
 }
 
 function provinces() {
-  return [...new Set(allRecords.map((r) => r.province))].sort((a, b) => {
+  const fromRecords = [...new Set(allRecords.map((r) => r.province))];
+  const list = provinceList.length ? provinceList : fromRecords;
+  return [...list].sort((a, b) => {
     if (a === "四川") return -1;
     if (b === "四川") return 1;
     return a.localeCompare(b, "zh-CN");
   });
 }
 
+function recordsForProvince(province) {
+  return allRecords.filter((r) => r.province === province);
+}
+
 function yearsForProvince(province) {
-  return [...new Set(allRecords.filter((r) => r.province === province).map((r) => r.year))].sort(
-    (a, b) => b - a
-  );
+  return [...new Set(recordsForProvince(province).map((r) => r.year))].sort((a, b) => b - a);
 }
 
 function categoriesFor(province, year) {
-  return [
-    ...new Set(
-      allRecords.filter((r) => r.province === province && r.year === year).map((r) => r.category)
-    ),
-  ];
+  return [...new Set(recordsForProvince(province).filter((r) => r.year === year).map((r) => r.category))];
 }
 
 function batchesFor(province, year, category) {
   return [
     ...new Set(
-      allRecords
-        .filter((r) => r.province === province && r.year === year && r.category === category)
+      recordsForProvince(province)
+        .filter((r) => r.year === year && r.category === category)
         .map((r) => r.batch)
     ),
   ];
@@ -82,9 +131,10 @@ function batchesFor(province, year, category) {
 function defaultCategory(province, year) {
   const cats = categoriesFor(province, year);
   const mode = PROVINCE_MODES[province] || "老高考";
-  if (mode === "老高考") {
-    return cats.includes("理工") ? "理工" : cats[0];
-  }
+  const p = getProfile();
+  const fromProfile = scoreCategoryFor(province, p.category);
+  if (cats.includes(fromProfile)) return fromProfile;
+  if (mode === "老高考") return cats.includes("理工") ? "理工" : cats[0];
   if (cats.includes("物理")) return "物理";
   if (cats.includes("综合")) return "综合";
   return cats[0];
@@ -92,14 +142,17 @@ function defaultCategory(province, year) {
 
 function buildProvinceSelect() {
   const sel = document.getElementById("hero-province");
+  const profileSel = document.getElementById("profile-province");
   const chipContainer = document.getElementById("filter-province");
-  if (!sel || !chipContainer) return;
-
   const list = provinces();
-  sel.innerHTML = list
-    .map((p) => `<option value="${p}"${p === filters.province ? " selected" : ""}>${p}</option>`)
-    .join("");
 
+  const opts = list.map((p) => `<option value="${p}">${p}</option>`).join("");
+  if (sel) sel.innerHTML = opts;
+  if (profileSel) profileSel.innerHTML = opts;
+  if (sel) sel.value = filters.province;
+  if (profileSel) profileSel.value = getProfile().province || filters.province;
+
+  if (!chipContainer) return;
   chipContainer.innerHTML = list
     .map(
       (p) =>
@@ -108,8 +161,9 @@ function buildProvinceSelect() {
     .join("");
 
   chipContainer.querySelectorAll(".chip").forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", async () => {
       filters.province = btn.getAttribute("data-province") || "四川";
+      await loadProvince(filters.province);
       syncProvinceUI();
       renderScores();
     });
@@ -158,8 +212,9 @@ function buildYearChips() {
     .join("");
   bindChipGroup("filter-year", (btn) => {
     filters.year = Number(btn.getAttribute("data-year"));
-    const cats = categoriesFor(filters.province, filters.year);
-    if (!cats.includes(filters.category)) filters.category = defaultCategory(filters.province, filters.year);
+    if (!categoriesFor(filters.province, filters.year).includes(filters.category)) {
+      filters.category = defaultCategory(filters.province, filters.year);
+    }
     syncProvinceUI();
     renderScores();
   });
@@ -240,6 +295,10 @@ function renderScores() {
         const arrow = diff >= 0 ? "↑" : "↓";
         deltaHtml = `<span class="score-card__delta ${cls}">较去年 ${arrow} ${Math.abs(diff)} 分</span>`;
       }
+      const rankHtml =
+        r.min_rank != null
+          ? `<div class="score-card__row"><span>最低位次</span><span>${r.min_rank.toLocaleString()}</span></div>`
+          : "";
       return `
         <article class="score-card">
           <div class="score-card__meta">${r.province} · ${r.year} · ${r.category}</div>
@@ -249,6 +308,7 @@ function renderScores() {
           <div class="score-card__row">
             <span>川大最低</span><span class="score-card__score">${r.min_score ?? "—"}</span>
           </div>
+          ${rankHtml}
           <div class="score-card__row">
             <span>${r.batch}</span>${deltaHtml}
           </div>
@@ -257,3 +317,5 @@ function renderScores() {
     })
     .join("");
 }
+
+export { provinces as getProvinces };

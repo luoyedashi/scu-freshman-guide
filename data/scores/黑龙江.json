@@ -1,0 +1,71 @@
+{
+  "province": "黑龙江",
+  "records": [
+    {
+      "year": 2024,
+      "province": "黑龙江",
+      "exam_mode": "新高考",
+      "category": "历史",
+      "batch": "本科批",
+      "control_line": 486,
+      "min_score": 617,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2024,
+      "province": "黑龙江",
+      "exam_mode": "新高考",
+      "category": "物理",
+      "batch": "本科批",
+      "control_line": 480,
+      "min_score": 635,
+      "min_rank": null,
+      "note": "物理+化学组"
+    },
+    {
+      "year": 2023,
+      "province": "黑龙江",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 430,
+      "min_score": 545,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2023,
+      "province": "黑龙江",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 408,
+      "min_score": 549,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "黑龙江",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 433,
+      "min_score": 557,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "黑龙江",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 308,
+      "min_score": 521,
+      "min_rank": null,
+      "note": ""
+    }
+  ]
+}

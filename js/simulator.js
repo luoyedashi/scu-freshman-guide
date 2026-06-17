@@ -1,14 +1,25 @@
-/** Sichuan volunteer simulator — rank-based, multi-school. */
+/** Sichuan rank-based simulator with gradient table and share URL. */
 
 import { loadLinks, officialUrl, resolveUrl } from "./links.js";
+import { fetchJson, renderFetchError } from "./fetchUtil.js";
+import { getProfile, saveProfile } from "./profile.js";
+import { setShareQuery, getShareQuery } from "./router.js";
+import { syncSimForm } from "./profile-ui.js";
 
-/** @type {{ schools: object[], records: object[] }} */
+/** @type {{ schools: object[], records: object[], meta?: object }} */
 let dataset = { schools: [], records: [] };
+
+const TIER_ORDER = { 保: 0, 稳: 1, 冲: 2, 难: 3 };
 
 export async function initSimulator() {
   await loadLinks();
-  const res = await fetch("data/sim_sichuan.json");
-  dataset = await res.json();
+  try {
+    dataset = await fetchJson("data/sim_sichuan.json");
+  } catch {
+    const out = document.getElementById("sim-result");
+    renderFetchError(out, "模拟数据加载失败", () => initSimulator());
+    return;
+  }
 
   const catSel = document.getElementById("sim-category");
   const form = document.getElementById("sim-form");
@@ -21,22 +32,33 @@ export async function initSimulator() {
     .map((c) => `<option value="${c.value}">${c.label}</option>`)
     .join("");
 
+  syncSimForm();
+
+  const q = getShareQuery();
+  if (q.rank) {
+    const rankEl = document.getElementById("sim-rank");
+    if (rankEl) rankEl.value = q.rank;
+    if (q.cat) catSel.value = q.cat;
+    runSimulation();
+  }
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     runSimulation();
   });
+
+  window.addEventListener("sim:run", () => {
+    syncSimForm();
+    runSimulation();
+  });
 }
 
-/**
- * @param {number} userRank
- * @param {number} refRank historical min rank (lower = harder to get in)
- */
 function classifyTier(userRank, refRank) {
   const margin = refRank - userRank;
-  if (margin >= 1200) return { tier: "保", tierClass: "safe", hint: "位次明显优于近年线" };
-  if (margin >= 200) return { tier: "稳", tierClass: "stable", hint: "位次接近或优于近年线" };
-  if (margin >= -1000) return { tier: "冲", tierClass: "reach", hint: "位次略逊于近年线，可冲刺" };
-  return { tier: "难", tierClass: "hard", hint: "位次差距较大" };
+  if (margin >= 1200) return { tier: "保", tierClass: "safe" };
+  if (margin >= 200) return { tier: "稳", tierClass: "stable" };
+  if (margin >= -1000) return { tier: "冲", tierClass: "reach" };
+  return { tier: "难", tierClass: "hard" };
 }
 
 function runSimulation() {
@@ -45,21 +67,28 @@ function runSimulation() {
   const out = document.getElementById("sim-result");
   if (!out || !Number.isInteger(userRank) || userRank < 1) return;
 
+  saveProfile({ category, rank: userRank });
+  setShareQuery({ rank: userRank, cat: category });
+  history.replaceState(null, "", `${location.pathname}${location.search}#section-simulator`);
+
   const results = dataset.schools
     .map((school) => {
       const rows = dataset.records
         .filter((r) => r.school_id === school.id && r.category === category && r.min_rank != null)
         .sort((a, b) => b.year - a.year);
-
       if (rows.length === 0) return null;
 
-      const latest = rows[0];
       const avgRank = Math.round(rows.reduce((s, r) => s + r.min_rank, 0) / rows.length);
-      const { tier, tierClass, hint } = classifyTier(userRank, avgRank);
-      const margin = avgRank - userRank;
-      const url = resolveUrl(school.urlKey);
-
-      return { school, rows, latest, avgRank, tier, tierClass, hint, margin, url };
+      const { tier, tierClass } = classifyTier(userRank, avgRank);
+      return {
+        school,
+        rows,
+        avgRank,
+        tier,
+        tierClass,
+        margin: avgRank - userRank,
+        url: resolveUrl(school.urlKey),
+      };
     })
     .filter(Boolean);
 
@@ -68,56 +97,76 @@ function runSimulation() {
     return;
   }
 
-  const tierOrder = { 保: 0, 稳: 1, 冲: 2, 难: 3 };
-  results.sort((a, b) => tierOrder[a.tier] - tierOrder[b.tier] || a.school.order - b.school.order);
+  results.sort((a, b) => TIER_ORDER[a.tier] - TIER_ORDER[b.tier] || a.school.order - b.school.order);
 
-  const counts = results.reduce(
-    (acc, r) => {
-      acc[r.tier] = (acc[r.tier] || 0) + 1;
-      return acc;
-    },
-    /** @type {Record<string, number>} */ ({})
-  );
-
-  const summary = ["保", "稳", "冲", "难"]
-    .filter((t) => counts[t])
-    .map((t) => `${t} ${counts[t]} 所`)
-    .join(" · ");
-
-  const cards = results
-    .map((r) => {
-      const history = r.rows
+  const gradientRows = ["冲", "稳", "保", "难"]
+    .map((tier) => {
+      const schools = results.filter((r) => r.tier === tier);
+      if (!schools.length) return "";
+      return schools
         .map(
-          (row) =>
-            `<tr><td>${row.year}</td><td>${row.min_rank.toLocaleString()}</td><td>${row.min_score ?? "—"}</td></tr>`
+          (r) =>
+            `<tr class="grad-row grad-row--${r.tierClass}">
+              <td><span class="sim-result__tier sim-result__tier--${r.tierClass}">${r.tier}</span></td>
+              <td><strong>${r.school.name}</strong><br><span class="grad-sub">${(r.school.tags || []).join(" · ")}</span></td>
+              <td>${r.avgRank.toLocaleString()}</td>
+              <td>${r.margin > 0 ? "+" : ""}${r.margin.toLocaleString()}</td>
+            </tr>`
         )
         .join("");
-
-      return `
-      <article class="sim-school sim-school--${r.tierClass}">
-        <div class="sim-school__head">
-          <div>
-            <h4 class="sim-school__name">${r.school.name}</h4>
-            <span class="sim-school__tags">${(r.school.tags || []).join(" · ")}</span>
-          </div>
-          <span class="sim-result__tier sim-result__tier--${r.tierClass}">${r.tier}</span>
-        </div>
-        <p class="sim-school__hint">${r.hint} · 近三年平均最低位次约 <strong>${r.avgRank.toLocaleString()}</strong>（你领先 ${r.margin > 0 ? "+" : ""}${r.margin.toLocaleString()} 名）</p>
-        <table class="sim-result__table sim-school__table">
-          <thead><tr><th>年份</th><th>最低位次</th><th>调档分</th></tr></thead>
-          <tbody>${history}</tbody>
-        </table>
-        <a class="sim-school__link" href="${r.url}" target="_blank" rel="noopener noreferrer">查看招生信息 →</a>
-      </article>`;
     })
     .join("");
+
+  const shareUrl = location.href;
 
   out.innerHTML = `
     <div class="sim-result__summary">
       <p>你的位次：<strong>${userRank.toLocaleString()}</strong> · ${category} · 四川省</p>
-      <p class="sim-result__summary-tags">${summary}</p>
+      <button type="button" class="btn-outline btn-share" id="sim-copy-link">复制分享链接</button>
     </div>
-    <div class="sim-schools">${cards}</div>
-    <p class="sim-result__note">按位次模拟，数据为本科一批普通类主代码参考线，不含中外合作/医护等单独组。2026 年计划与位次可能变化，仅供参考。</p>
+    <div class="grad-table-wrap">
+      <table class="grad-table" aria-label="志愿梯度参考表">
+        <thead><tr><th>梯度</th><th>院校</th><th>近三年均位次</th><th>与你差距</th></tr></thead>
+        <tbody>${gradientRows}</tbody>
+      </table>
+    </div>
+    <details class="sim-details">
+      <summary>展开各校三年明细</summary>
+      <div class="sim-schools">${results.map(renderSchoolCard).join("")}</div>
+    </details>
+    <p class="sim-result__note">按位次模拟 · 普通类一批主代码 · 不含中外合作/医护等 · 仅供参考不构成录取承诺</p>
   `;
+
+  document.getElementById("sim-copy-link")?.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      const btn = document.getElementById("sim-copy-link");
+      if (btn) {
+        btn.textContent = "已复制链接";
+        setTimeout(() => { btn.textContent = "复制分享链接"; }, 2000);
+      }
+    } catch {
+      prompt("复制链接：", shareUrl);
+    }
+  });
 }
+
+function renderSchoolCard(r) {
+  const history = r.rows
+    .map(
+      (row) =>
+        `<tr><td>${row.year}</td><td>${row.min_rank.toLocaleString()}</td><td>${row.min_score ?? "—"}</td></tr>`
+    )
+    .join("");
+  return `
+    <article class="sim-school sim-school--${r.tierClass}">
+      <div class="sim-school__head">
+        <h4 class="sim-school__name">${r.school.name}</h4>
+        <span class="sim-result__tier sim-result__tier--${r.tierClass}">${r.tier}</span>
+      </div>
+      <table class="sim-result__table"><thead><tr><th>年</th><th>位次</th><th>分</th></tr></thead><tbody>${history}</tbody></table>
+      <a class="sim-school__link" href="${r.url}" target="_blank" rel="noopener noreferrer">招生信息 →</a>
+    </article>`;
+}
+
+export { runSimulation };

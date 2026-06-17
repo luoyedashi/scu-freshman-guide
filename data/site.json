@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "updated": "2026-06-17",
+    "version": "2.0.0"
+  },
+  "community": {
+    "groupName": "俊贤信息资源分享群",
+    "qrExpires": "2026-06-24",
+    "qrImage": "assets/brand/freshman-group-qr.png"
+  },
+  "dataSources": [
+    {"id": "scores", "label": "全国分数线", "source": "阳光高考 / 川大招生网公开数据", "updated": "2026-06-17"},
+    {"id": "sim", "label": "四川位次模拟", "source": "四川省教育考试院调档线", "updated": "2026-06-17"},
+    {"id": "majors", "label": "专业目录", "source": "四川大学2026招生章程附件", "updated": "2026-06-17"},
+    {"id": "policies", "label": "招生政策", "source": "阳光高考 + 本科招生网", "updated": "2026-06-17"}
+  ]
+}

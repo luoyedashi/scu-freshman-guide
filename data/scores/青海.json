@@ -1,0 +1,71 @@
+{
+  "province": "青海",
+  "records": [
+    {
+      "year": 2024,
+      "province": "青海",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 440,
+      "min_score": 532,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2024,
+      "province": "青海",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 398,
+      "min_score": 536,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2023,
+      "province": "青海",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 406,
+      "min_score": 511,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2023,
+      "province": "青海",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 340,
+      "min_score": 493,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "青海",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 445,
+      "min_score": 493,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "青海",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 335,
+      "min_score": 468,
+      "min_rank": null,
+      "note": ""
+    }
+  ]
+}

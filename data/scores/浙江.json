@@ -1,0 +1,38 @@
+{
+  "province": "浙江",
+  "records": [
+    {
+      "year": 2024,
+      "province": "浙江",
+      "exam_mode": "新高考",
+      "category": "综合",
+      "batch": "本科批",
+      "control_line": 595,
+      "min_score": 646,
+      "min_rank": null,
+      "note": "特控线"
+    },
+    {
+      "year": 2023,
+      "province": "浙江",
+      "exam_mode": "新高考",
+      "category": "综合",
+      "batch": "本科批",
+      "control_line": 594,
+      "min_score": 651,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "浙江",
+      "exam_mode": "新高考",
+      "category": "综合",
+      "batch": "本科批",
+      "control_line": 592,
+      "min_score": 643,
+      "min_rank": null,
+      "note": ""
+    }
+  ]
+}

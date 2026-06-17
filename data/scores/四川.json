@@ -1,0 +1,71 @@
+{
+  "province": "四川",
+  "records": [
+    {
+      "year": 2024,
+      "province": "四川",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 529,
+      "min_score": 591,
+      "min_rank": null,
+      "note": "0552组最低"
+    },
+    {
+      "year": 2024,
+      "province": "四川",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 539,
+      "min_score": 634,
+      "min_rank": null,
+      "note": "0552组最低"
+    },
+    {
+      "year": 2023,
+      "province": "四川",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 527,
+      "min_score": 581,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2023,
+      "province": "四川",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 520,
+      "min_score": 621,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "四川",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 538,
+      "min_score": 573,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "四川",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 515,
+      "min_score": 609,
+      "min_rank": null,
+      "note": ""
+    }
+  ]
+}

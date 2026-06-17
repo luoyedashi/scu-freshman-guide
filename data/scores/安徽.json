@@ -1,0 +1,71 @@
+{
+  "province": "安徽",
+  "records": [
+    {
+      "year": 2024,
+      "province": "安徽",
+      "exam_mode": "新高考",
+      "category": "历史",
+      "batch": "本科批",
+      "control_line": 512,
+      "min_score": 632,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2024,
+      "province": "安徽",
+      "exam_mode": "新高考",
+      "category": "物理",
+      "batch": "本科批",
+      "control_line": 514,
+      "min_score": 648,
+      "min_rank": null,
+      "note": "物理+化学组"
+    },
+    {
+      "year": 2023,
+      "province": "安徽",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 495,
+      "min_score": 607,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2023,
+      "province": "安徽",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 482,
+      "min_score": 611,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "安徽",
+      "exam_mode": "老高考",
+      "category": "文史",
+      "batch": "普通类一批",
+      "control_line": 523,
+      "min_score": 582,
+      "min_rank": null,
+      "note": ""
+    },
+    {
+      "year": 2022,
+      "province": "安徽",
+      "exam_mode": "老高考",
+      "category": "理工",
+      "batch": "普通类一批",
+      "control_line": 491,
+      "min_score": 607,
+      "min_rank": null,
+      "note": ""
+    }
+  ]
+}

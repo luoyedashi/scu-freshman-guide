@@ -144,9 +144,9 @@
     {
       "name": "中外合作办学",
       "majors": [
-        {"name": "四川大学匹兹堡学院", "tags": ["中外合作", "工科"], "featured": true, "subjects": "物理+化学", "brief": "机械、材料等，全英文教学，入校后不能转专业。", "includes": ["机械设计制造及其自动化", "材料科学与工程", "工业设计"], "urlKey": "scupi"},
-        {"name": "电气工程及其自动化（中德合作）", "tags": ["中外合作", "工科"], "featured": true, "subjects": "物理+化学", "brief": "与德国克劳斯塔尔工业大学合作，入校后不能转专业。", "urlKey": "chsi_plan"},
-        {"name": "计算机科学与技术（中外合作办学）", "tags": ["中外合作", "工科", "热门"], "featured": true, "subjects": "物理+化学", "brief": "奥克兰学院，仅限学院内转专业。", "urlKey": "chsi_plan"},
+        {"name": "四川大学匹兹堡学院", "tags": ["中外合作", "工科"], "featured": true, "subjects": "物理+化学", "brief": "机械、材料等，全英文教学。", "includes": ["机械设计制造及其自动化", "材料科学与工程", "工业设计"], "transferRule": "入校后不能转专业", "urlKey": "scupi"},
+        {"name": "电气工程及其自动化（中德合作）", "tags": ["中外合作", "工科"], "featured": true, "subjects": "物理+化学", "brief": "与德国克劳斯塔尔工业大学合作。", "transferRule": "入校后不能转专业", "urlKey": "chsi_plan"},
+        {"name": "计算机科学与技术（中外合作办学）", "tags": ["中外合作", "工科", "热门"], "featured": true, "subjects": "物理+化学", "brief": "奥克兰学院。", "transferRule": "仅限奥克兰学院内转专业", "urlKey": "chsi_plan"},
         {"name": "人工智能（中外合作办学）", "tags": ["中外合作", "工科", "热门"], "featured": true, "subjects": "物理+化学", "brief": "奥克兰学院。", "urlKey": "chsi_plan"},
         {"name": "电子信息工程（中外合作办学）", "tags": ["中外合作", "工科"], "featured": false, "subjects": "物理+化学", "brief": "奥克兰学院。", "urlKey": "chsi_plan"},
         {"name": "机械设计制造及其自动化（中外合作办学）", "tags": ["中外合作", "工科"], "featured": false, "subjects": "物理+化学", "brief": "奥克兰学院。", "urlKey": "chsi_plan"},
