@@ -13,5 +13,10 @@
     {"id": "sim", "label": "四川位次模拟", "source": "四川省教育考试院调档线", "updated": "2026-06-17"},
     {"id": "majors", "label": "专业目录", "source": "四川大学2026招生章程附件", "updated": "2026-06-17"},
     {"id": "policies", "label": "招生政策", "source": "阳光高考 + 本科招生网", "updated": "2026-06-17"}
-  ]
+  ],
+  "analytics": {
+    "enabled": false,
+    "apiBase": "",
+    "note": "部署 backend 后填写 apiBase 并设 enabled 为 true，例如 https://your-app.onrender.com"
+  }
 }

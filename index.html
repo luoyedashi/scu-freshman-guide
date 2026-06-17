@@ -52,6 +52,10 @@
           <option value="历史">历史类</option>
         </select></label>
         <label>全省位次（可选）<input type="number" id="profile-rank" min="1" max="200000" placeholder="出分后填写"></label>
+        <label class="profile-consent">
+          <input type="checkbox" id="profile-sync-consent">
+          <span>同意将档案（省份、科类、位次）同步至团队后台，用于咨询统计（可选）</span>
+        </label>
         <button type="submit" class="sim-form__btn">保存并更新</button>
       </form>
       <button type="button" class="btn-outline" id="profile-copy-consult">复制咨询话术</button>
@@ -285,6 +289,15 @@
   </div>
 
   <button type="button" class="fab" id="fab-cta">加微信</button>
+
+  <div class="consent-bar" id="consent-bar" hidden role="dialog" aria-label="访问统计说明">
+    <p>我们使用匿名会话统计访问量，便于改进站点。档案同步仅在您勾选时进行。<a href="legal.html#privacy">详情</a></p>
+    <div class="consent-bar__actions">
+      <button type="button" class="consent-bar__btn consent-bar__btn--ghost" id="consent-decline">仅本地保存</button>
+      <button type="button" class="consent-bar__btn" id="consent-accept">同意统计</button>
+    </div>
+  </div>
+
   <script type="module" src="js/app.js"></script>
 </body>
 </html>

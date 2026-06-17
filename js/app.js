@@ -6,6 +6,7 @@ import { initPaths } from "./paths.js";
 import { initChecklists } from "./checklists.js";
 import { initCommunity, initSiteMeta, initPostAdmission } from "./site-meta.js";
 import { initRouter } from "./router.js";
+import { initAnalytics } from "./analytics.js";
 
 const SECTIONS = [
   { id: "section-hero", tab: "首页" },
@@ -147,6 +148,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   registerServiceWorker();
 
   await populateProfileProvinces();
+
+  await initAnalytics();
 
   await Promise.all([
     wireOfficialLinks(),
