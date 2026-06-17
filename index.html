@@ -59,6 +59,7 @@
       </header>
       <div class="timeline">
         <a class="timeline__item" data-link-key="chsi_charter" href="https://gaokao.chsi.com.cn/zsgs/zhangcheng/" target="_blank" rel="noopener noreferrer"><span class="timeline__when">已发布</span><span class="timeline__what">2026 本科招生章程</span><span class="timeline__go">→</span></a>
+        <a class="timeline__item" data-link-key="scu_qiangji_charter" href="https://zs.scu.edu.cn/info/1091/3364.htm" target="_blank" rel="noopener noreferrer"><span class="timeline__when">已发布</span><span class="timeline__what">2026 强基计划招生简章</span><span class="timeline__go">→</span></a>
         <a class="timeline__item" data-link-key="chsi_qiangji" href="https://bm.chsi.com.cn/jcxkzs/sch/10610" target="_blank" rel="noopener noreferrer"><span class="timeline__when">4月</span><span class="timeline__what">强基计划报名</span><span class="timeline__go">→</span></a>
         <div class="timeline__item timeline__item--static"><span class="timeline__when">6月7-8日</span><span class="timeline__what">全国统一高考</span></div>
         <div class="timeline__item timeline__item--static"><span class="timeline__when">6月下旬</span><span class="timeline__what">出分 · 填报 · 咨询</span></div>
@@ -70,13 +71,12 @@
     <section class="section section--compact" id="section-simulator">
       <header class="section__header">
         <span class="section__tag">志愿模拟</span>
-        <h2 class="section__title">冲稳保参考</h2>
-        <p class="section__desc">输入省份、科类与分数，对照 2022–2024 川大最低线</p>
+        <h2 class="section__title">四川省内冲稳保</h2>
+        <p class="section__desc">输入高考位次，对照川大、电子科大等 8 所重点院校 2022–2024 最低位次</p>
       </header>
       <form class="sim-form" id="sim-form">
-        <label>省份<select id="sim-province" required></select></label>
         <label>科类<select id="sim-category" required></select></label>
-        <label>高考分数<input type="number" id="sim-score" min="200" max="900" placeholder="如 620" required></label>
+        <label>全省位次<input type="number" id="sim-rank" min="1" max="200000" placeholder="如 6000" required></label>
         <button type="submit" class="sim-form__btn">开始评估</button>
       </form>
       <div id="sim-result" class="sim-result" aria-live="polite"></div>
@@ -193,7 +193,7 @@
     <footer class="site-footer">
       <p><strong>俊贤学长升学咨询和家教中介</strong></p>
       <p>本网站非四川大学官方招生网站</p>
-      <p>官方入口：<a data-link-key="chsi_school" href="https://gaokao.chsi.com.cn/sch/schoolInfo--schId-10610.dhtml" target="_blank" rel="noopener noreferrer">阳光高考</a> · <a data-link-key="scu_zs_home" href="https://zs.scu.edu.cn" target="_blank" rel="noopener noreferrer">川大招生网</a></p>
+      <p>官方入口：<a data-link-key="scu_official" href="https://www.scu.edu.cn/" target="_blank" rel="noopener noreferrer">四川大学官网</a> · <a data-link-key="scu_zs_home" href="https://zs.scu.edu.cn/" target="_blank" rel="noopener noreferrer">本科招生网</a> · <a data-link-key="chsi_school" href="https://gaokao.chsi.com.cn/sch/schoolInfo--schId-10610.dhtml" target="_blank" rel="noopener noreferrer">阳光高考</a></p>
       <p class="copyright">© 2026 落叶大师 · 版权所有 · 未经授权禁止转载</p>
     </footer>
   </div>

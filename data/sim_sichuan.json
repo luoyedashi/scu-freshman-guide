@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "province": "四川",
+    "updated": "2026-06-17",
+    "years": [2022, 2023, 2024],
+    "note": "位次为四川省本科一批普通类主招生代码参考（不含中外合作、医护、艺术等单独代码组）。位次越小表示成绩越好。",
+    "source": "四川省教育考试院公布调档线及公开统计"
+  },
+  "schools": [
+    {"id": "uestc", "name": "电子科技大学", "short": "电子科大", "tags": ["985"], "order": 1, "urlKey": "uestc_home"},
+    {"id": "scu", "name": "四川大学", "short": "川大", "tags": ["985"], "order": 2, "urlKey": "scu_zs_home"},
+    {"id": "swjtu", "name": "西南交通大学", "short": "西南交大", "tags": ["211"], "order": 3, "urlKey": "swjtu_home"},
+    {"id": "swufe", "name": "西南财经大学", "short": "西南财大", "tags": ["211"], "order": 4, "urlKey": "swufe_home"},
+    {"id": "swpu", "name": "西南石油大学", "short": "西南石大", "tags": ["双一流"], "order": 5, "urlKey": "swpu_home"},
+    {"id": "cdut", "name": "成都理工大学", "short": "成理", "tags": ["双一流"], "order": 6, "urlKey": "cdut_home"},
+    {"id": "sicau", "name": "四川农业大学", "short": "川农", "tags": ["211"], "order": 7, "urlKey": "sicau_home"},
+    {"id": "cdutcm", "name": "成都中医药大学", "short": "成中医", "tags": ["双一流"], "order": 8, "urlKey": "cdutcm_home"}
+  ],
+  "records": [
+    {"year": 2024, "school_id": "uestc", "category": "物理", "min_score": 662, "min_rank": 2456, "code": "0055"},
+    {"year": 2024, "school_id": "scu", "category": "物理", "min_score": 645, "min_rank": 5976, "code": "0052"},
+    {"year": 2024, "school_id": "swjtu", "category": "物理", "min_score": 617, "min_rank": 16551, "code": "0054"},
+    {"year": 2024, "school_id": "swufe", "category": "物理", "min_score": 613, "min_rank": 18625, "code": "0057"},
+    {"year": 2024, "school_id": "swpu", "category": "物理", "min_score": 590, "min_rank": 33245, "code": "5101"},
+    {"year": 2024, "school_id": "cdut", "category": "物理", "min_score": 585, "min_rank": 37088, "code": "5102"},
+    {"year": 2024, "school_id": "sicau", "category": "物理", "min_score": 577, "min_rank": 43810, "code": "5112"},
+    {"year": 2024, "school_id": "cdutcm", "category": "物理", "min_score": 549, "min_rank": 71745, "code": "5117"},
+
+    {"year": 2024, "school_id": "scu", "category": "历史", "min_score": 599, "min_rank": 1390, "code": "0052"},
+    {"year": 2024, "school_id": "uestc", "category": "历史", "min_score": 588, "min_rank": 2509, "code": "0055"},
+    {"year": 2024, "school_id": "swufe", "category": "历史", "min_score": 588, "min_rank": 2509, "code": "0057"},
+    {"year": 2024, "school_id": "swjtu", "category": "历史", "min_score": 579, "min_rank": 3727, "code": "0054"},
+    {"year": 2024, "school_id": "sicau", "category": "历史", "min_score": 567, "min_rank": 5934, "code": "5112"},
+    {"year": 2024, "school_id": "swpu", "category": "历史", "min_score": 550, "min_rank": 10804, "code": "5101"},
+    {"year": 2024, "school_id": "cdut", "category": "历史", "min_score": 546, "min_rank": 12361, "code": "5102"},
+
+    {"year": 2023, "school_id": "uestc", "category": "物理", "min_score": 654, "min_rank": 3522, "code": "0055"},
+    {"year": 2023, "school_id": "scu", "category": "物理", "min_score": 621, "min_rank": 8302, "code": "0052"},
+    {"year": 2023, "school_id": "swjtu", "category": "物理", "min_score": 610, "min_rank": 19346, "code": "0054"},
+    {"year": 2023, "school_id": "swufe", "category": "物理", "min_score": 609, "min_rank": 18012, "code": "0057"},
+    {"year": 2023, "school_id": "swpu", "category": "物理", "min_score": 583, "min_rank": 31850, "code": "5101"},
+    {"year": 2023, "school_id": "cdut", "category": "物理", "min_score": 573, "min_rank": 42541, "code": "5102"},
+    {"year": 2023, "school_id": "sicau", "category": "物理", "min_score": 567, "min_rank": 52345, "code": "5112"},
+
+    {"year": 2023, "school_id": "scu", "category": "历史", "min_score": 598, "min_rank": 1282, "code": "0052"},
+    {"year": 2023, "school_id": "swufe", "category": "历史", "min_score": 586, "min_rank": 2502, "code": "0057"},
+    {"year": 2023, "school_id": "swjtu", "category": "历史", "min_score": 581, "min_rank": 3670, "code": "0054"},
+    {"year": 2023, "school_id": "sicau", "category": "历史", "min_score": 566, "min_rank": 6020, "code": "5112"},
+
+    {"year": 2022, "school_id": "uestc", "category": "物理", "min_score": 648, "min_rank": 4200, "code": "0055"},
+    {"year": 2022, "school_id": "scu", "category": "物理", "min_score": 609, "min_rank": 9518, "code": "0052"},
+    {"year": 2022, "school_id": "swjtu", "category": "物理", "min_score": 605, "min_rank": 21000, "code": "0054"},
+    {"year": 2022, "school_id": "swufe", "category": "物理", "min_score": 604, "min_rank": 19500, "code": "0057"},
+    {"year": 2022, "school_id": "swpu", "category": "物理", "min_score": 579, "min_rank": 34000, "code": "5101"},
+    {"year": 2022, "school_id": "cdut", "category": "物理", "min_score": 571, "min_rank": 45000, "code": "5102"},
+    {"year": 2022, "school_id": "sicau", "category": "物理", "min_score": 565, "min_rank": 54000, "code": "5112"},
+
+    {"year": 2022, "school_id": "scu", "category": "历史", "min_score": 573, "min_rank": 1500, "code": "0052"},
+    {"year": 2022, "school_id": "swufe", "category": "历史", "min_score": 584, "min_rank": 2600, "code": "0057"},
+    {"year": 2022, "school_id": "swjtu", "category": "历史", "min_score": 578, "min_rank": 3900, "code": "0054"},
+    {"year": 2022, "school_id": "sicau", "category": "历史", "min_score": 560, "min_rank": 6200, "code": "5112"}
+  ]
+}

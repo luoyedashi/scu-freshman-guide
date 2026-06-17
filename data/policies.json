@@ -6,6 +6,22 @@
   },
   "policies": [
     {
+      "title": "四川大学官网",
+      "summary": "四川大学主页，含学校概况、招生信息入口等。",
+      "urlKey": "scu_official",
+      "category": "官方入口",
+      "year": 2026,
+      "featured": true
+    },
+    {
+      "title": "四川大学本科招生网",
+      "summary": "本科招生网首页，章程、计划、分数线、强基简章等。",
+      "urlKey": "scu_zs_home",
+      "category": "官方入口",
+      "year": 2026,
+      "featured": true
+    },
+    {
       "title": "2026年普通本科招生章程",
       "summary": "阳光高考平台查询四川大学2026年章程全文（教育部备案）。",
       "urlKey": "chsi_charter",
@@ -14,10 +30,18 @@
       "featured": true
     },
     {
-      "title": "2026招生章程（全文转载参考）",
-      "summary": "第三方转载的章程全文，便于快速阅读；以阳光高考与学校官网为准。",
-      "urlKey": "charter_mirror_2026",
-      "category": "招生章程",
+      "title": "2026年强基计划招生简章",
+      "summary": "四川大学2026年强基计划招生简章（本科招生网官方发布）。",
+      "urlKey": "scu_qiangji_charter",
+      "category": "强基计划",
+      "year": 2026,
+      "featured": true
+    },
+    {
+      "title": "强基计划报名系统",
+      "summary": "学信网强基计划报名入口（四川大学）。",
+      "urlKey": "chsi_qiangji",
+      "category": "强基计划",
       "year": 2026,
       "featured": true
     },
@@ -46,12 +70,12 @@
       "featured": true
     },
     {
-      "title": "2026年强基计划",
-      "summary": "四川大学强基计划报名系统（学信网）。",
-      "urlKey": "chsi_qiangji",
-      "category": "强基计划",
+      "title": "2026招生章程（全文转载参考）",
+      "summary": "第三方转载的章程全文，便于快速阅读；以阳光高考与学校官网为准。",
+      "urlKey": "charter_mirror_2026",
+      "category": "招生章程",
       "year": 2026,
-      "featured": true
+      "featured": false
     },
     {
       "title": "特殊类型招生报名系统",
@@ -78,16 +102,8 @@
       "featured": false
     },
     {
-      "title": "四川大学本科招生网",
-      "summary": "学校官方招生网站首页（请从首页菜单进入章程、分数、计划）。",
-      "urlKey": "scu_zs_home",
-      "category": "官方入口",
-      "year": 2026,
-      "featured": true
-    },
-    {
-      "title": "四川大学招生信息（官网门户）",
-      "summary": "四川大学主页招生信息栏目。",
+      "title": "四川大学招生信息（官网栏目）",
+      "summary": "四川大学主页「招生就业」栏目。",
       "urlKey": "scu_zs_portal",
       "category": "官方入口",
       "year": 2026,
