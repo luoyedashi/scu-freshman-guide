@@ -11,6 +11,7 @@ const SECTIONS = [
   { id: "section-majors", tab: "专业" },
   { id: "section-campus", tab: "江安" },
   { id: "section-services", tab: "服务" },
+  { id: "section-community", tab: "新生群" },
   { id: "section-contact", tab: "联系" },
 ];
 
@@ -89,9 +90,11 @@ function initServiceTabs() {
 }
 
 function initFab() {
-  document.getElementById("fab-cta")?.addEventListener("click", () => {
+  const fab = document.getElementById("fab-cta");
+  fab?.addEventListener("click", () => {
     document.getElementById("section-contact")?.scrollIntoView({ behavior: "smooth" });
   });
+  if (fab) fab.textContent = "联系学长";
 }
 
 function initCountdown() {
