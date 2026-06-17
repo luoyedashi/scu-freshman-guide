@@ -1,14 +1,7 @@
 /** @typedef {{ year: number; province: string; category: string; batch: string; control_line: number|null; min_score: number|null; min_rank: number|null; note: string; exam_mode: string }} ScoreRecord */
 
-const CATEGORY_MAP = {
-  老高考: ["理工", "文史"],
-  新高考: ["物理", "历史"],
-};
-
-/** @type {ScoreRecord[]} */
 let allRecords = [];
 
-/** @type {{ province: string; year: number; category: string; batch: string }} */
 const filters = {
   province: "四川",
   year: 2024,
@@ -17,11 +10,12 @@ const filters = {
 };
 
 const PROVINCE_MODES = {
-  四川: "老高考",
-  陕西: "老高考",
-  云南: "老高考",
-  重庆: "新高考",
-  贵州: "新高考",
+  北京: "新高考", 天津: "新高考", 河北: "新高考", 山西: "老高考", 内蒙古: "老高考",
+  辽宁: "新高考", 吉林: "新高考", 黑龙江: "新高考", 上海: "新高考", 江苏: "新高考",
+  浙江: "新高考", 安徽: "新高考", 福建: "新高考", 江西: "新高考", 山东: "新高考",
+  河南: "老高考", 湖北: "新高考", 湖南: "新高考", 广东: "新高考", 广西: "新高考",
+  海南: "新高考", 重庆: "新高考", 四川: "老高考", 贵州: "新高考", 云南: "老高考",
+  西藏: "老高考", 陕西: "老高考", 甘肃: "新高考", 青海: "老高考", 宁夏: "老高考", 新疆: "老高考",
 };
 
 export async function initScores() {
@@ -30,14 +24,13 @@ export async function initScores() {
   allRecords = data.records;
 
   const metaEl = document.getElementById("scores-updated");
-  if (metaEl && data.meta?.updated) {
-    metaEl.textContent = `数据更新：${data.meta.updated} · 来源：${data.meta.source}`;
+  if (metaEl && data.meta) {
+    const n = data.meta.provinces_covered?.length ?? 0;
+    metaEl.textContent = `数据更新：${data.meta.updated} · 覆盖 ${n} 省 · 来源：川大招生网`;
   }
 
   buildProvinceSelect();
-  buildYearChips();
-  buildCategoryChips();
-  buildBatchChips();
+  syncProvinceUI();
   renderScores();
 
   document.getElementById("province-go")?.addEventListener("click", () => {
@@ -52,7 +45,11 @@ export async function initScores() {
 }
 
 function provinces() {
-  return [...new Set(allRecords.map((r) => r.province))].sort();
+  return [...new Set(allRecords.map((r) => r.province))].sort((a, b) => {
+    if (a === "四川") return -1;
+    if (b === "四川") return 1;
+    return a.localeCompare(b, "zh-CN");
+  });
 }
 
 function yearsForProvince(province) {
@@ -79,16 +76,28 @@ function batchesFor(province, year, category) {
   ];
 }
 
+function defaultCategory(province, year) {
+  const cats = categoriesFor(province, year);
+  const mode = PROVINCE_MODES[province] || "老高考";
+  if (mode === "老高考") {
+    return cats.includes("理工") ? "理工" : cats[0];
+  }
+  if (cats.includes("物理")) return "物理";
+  if (cats.includes("综合")) return "综合";
+  return cats[0];
+}
+
 function buildProvinceSelect() {
   const sel = document.getElementById("hero-province");
   const chipContainer = document.getElementById("filter-province");
   if (!sel || !chipContainer) return;
 
-  sel.innerHTML = provinces()
+  const list = provinces();
+  sel.innerHTML = list
     .map((p) => `<option value="${p}"${p === filters.province ? " selected" : ""}>${p}</option>`)
     .join("");
 
-  chipContainer.innerHTML = provinces()
+  chipContainer.innerHTML = list
     .map(
       (p) =>
         `<button type="button" class="chip${p === filters.province ? " active" : ""}" data-province="${p}">${p}</button>`
@@ -116,7 +125,7 @@ function syncProvinceUI() {
   if (!years.includes(filters.year)) filters.year = years[0] ?? 2024;
 
   const cats = categoriesFor(filters.province, filters.year);
-  if (!cats.includes(filters.category)) filters.category = cats[0] ?? "理工";
+  if (!cats.includes(filters.category)) filters.category = defaultCategory(filters.province, filters.year);
 
   const batches = batchesFor(filters.province, filters.year, filters.category);
   if (!batches.includes(filters.batch)) filters.batch = batches[0] ?? "普通类一批";
@@ -124,6 +133,14 @@ function syncProvinceUI() {
   buildYearChips();
   buildCategoryChips();
   buildBatchChips();
+}
+
+function bindChipGroup(containerId, onPick) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.querySelectorAll(".chip:not(.disabled)").forEach((btn) => {
+    btn.addEventListener("click", () => onPick(btn));
+  });
 }
 
 function buildYearChips() {
@@ -136,43 +153,29 @@ function buildYearChips() {
         `<button type="button" class="chip${y === filters.year ? " active" : ""}" data-year="${y}">${y}</button>`
     )
     .join("");
-
-  container.querySelectorAll(".chip").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      filters.year = Number(btn.getAttribute("data-year"));
-      const cats = categoriesFor(filters.province, filters.year);
-      if (!cats.includes(filters.category)) filters.category = cats[0];
-      buildCategoryChips();
-      buildBatchChips();
-      renderScores();
-      buildYearChips();
-    });
+  bindChipGroup("filter-year", (btn) => {
+    filters.year = Number(btn.getAttribute("data-year"));
+    const cats = categoriesFor(filters.province, filters.year);
+    if (!cats.includes(filters.category)) filters.category = defaultCategory(filters.province, filters.year);
+    syncProvinceUI();
+    renderScores();
   });
 }
 
 function buildCategoryChips() {
   const container = document.getElementById("filter-category");
   if (!container) return;
-  const mode = PROVINCE_MODES[filters.province] || "老高考";
-  const allCats = CATEGORY_MAP[mode] || ["理工", "文史"];
   const available = categoriesFor(filters.province, filters.year);
-
-  container.innerHTML = allCats
-    .map((c) => {
-      const disabled = !available.includes(c);
-      return `<button type="button" class="chip${c === filters.category ? " active" : ""}${disabled ? " disabled" : ""}" data-category="${c}"${disabled ? " disabled" : ""}>${c}</button>`;
-    })
+  container.innerHTML = available
+    .map(
+      (c) =>
+        `<button type="button" class="chip${c === filters.category ? " active" : ""}" data-category="${c}">${c}</button>`
+    )
     .join("");
-
-  container.querySelectorAll(".chip:not(.disabled)").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      filters.category = btn.getAttribute("data-category") || filters.category;
-      const batches = batchesFor(filters.province, filters.year, filters.category);
-      if (!batches.includes(filters.batch)) filters.batch = batches[0];
-      buildBatchChips();
-      renderScores();
-      buildCategoryChips();
-    });
+  bindChipGroup("filter-category", (btn) => {
+    filters.category = btn.getAttribute("data-category") || filters.category;
+    syncProvinceUI();
+    renderScores();
   });
 }
 
@@ -186,13 +189,10 @@ function buildBatchChips() {
         `<button type="button" class="chip${b === filters.batch ? " active" : ""}" data-batch="${b}">${b}</button>`
     )
     .join("");
-
-  container.querySelectorAll(".chip").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      filters.batch = btn.getAttribute("data-batch") || filters.batch;
-      renderScores();
-      buildBatchChips();
-    });
+  bindChipGroup("filter-batch", (btn) => {
+    filters.batch = btn.getAttribute("data-batch") || filters.batch;
+    renderScores();
+    buildBatchChips();
   });
 }
 
@@ -221,7 +221,7 @@ function renderScores() {
   if (matched.length === 0) {
     list.innerHTML = `
       <div class="empty-state">
-        <p>该组合暂无数据，更多省份陆续更新中。</p>
+        <p>该组合暂无数据。</p>
         <a href="https://zs.scu.edu.cn/zsxx/lqfs/" target="_blank" rel="noopener">查看官方分数线</a>
       </div>`;
     return;
@@ -237,32 +237,20 @@ function renderScores() {
         const arrow = diff >= 0 ? "↑" : "↓";
         deltaHtml = `<span class="score-card__delta ${cls}">较去年 ${arrow} ${Math.abs(diff)} 分</span>`;
       }
-      const rankText =
-        r.min_rank != null ? `位次参考：约 ${r.min_rank.toLocaleString()} 名` : "位次请参考省考试院公布";
       return `
         <article class="score-card">
-          <div class="score-card__meta">${r.province} · ${r.year} · ${r.category} · ${r.batch}</div>
+          <div class="score-card__meta">${r.province} · ${r.year} · ${r.category}</div>
           <div class="score-card__row">
-            <span>省控线</span>
-            <span>${r.control_line ?? "—"}</span>
+            <span>省控线</span><span>${r.control_line ?? "—"}</span>
           </div>
           <div class="score-card__row">
-            <span>川大最低分</span>
-            <span class="score-card__score">${r.min_score ?? "—"}</span>
+            <span>川大最低</span><span class="score-card__score">${r.min_score ?? "—"}</span>
           </div>
           <div class="score-card__row">
-            <span>${rankText}</span>
-            ${deltaHtml}
+            <span>${r.batch}</span>${deltaHtml}
           </div>
           ${r.note ? `<p class="score-card__note">${r.note}</p>` : ""}
         </article>`;
     })
     .join("");
-}
-
-export function setProvinceFromHero(province) {
-  if (!province) return;
-  filters.province = province;
-  syncProvinceUI();
-  renderScores();
 }
