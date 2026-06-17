@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "source": "https://zs.scu.edu.cn",
+    "updated": "2026-06-17",
+    "provinces_covered": ["四川", "陕西", "重庆", "云南", "贵州"],
+    "note": "普通类一批/本科批最低录取分，仅供参考"
+  },
+  "records": [
+    {"year": 2024, "province": "四川", "exam_mode": "老高考", "category": "理工", "batch": "普通类一批", "control_line": 539, "min_score": 634, "min_rank": null, "note": "0552组最低分，0052组约645"},
+    {"year": 2024, "province": "四川", "exam_mode": "老高考", "category": "文史", "batch": "普通类一批", "control_line": 529, "min_score": 591, "min_rank": null, "note": "0552组最低分"},
+    {"year": 2023, "province": "四川", "exam_mode": "老高考", "category": "理工", "batch": "普通类一批", "control_line": 520, "min_score": 621, "min_rank": null, "note": ""},
+    {"year": 2023, "province": "四川", "exam_mode": "老高考", "category": "文史", "batch": "普通类一批", "control_line": 527, "min_score": 581, "min_rank": null, "note": ""},
+    {"year": 2022, "province": "四川", "exam_mode": "老高考", "category": "理工", "batch": "普通类一批", "control_line": 515, "min_score": 609, "min_rank": null, "note": ""},
+    {"year": 2022, "province": "四川", "exam_mode": "老高考", "category": "文史", "batch": "普通类一批", "control_line": 538, "min_score": 573, "min_rank": null, "note": ""},
+
+    {"year": 2024, "province": "陕西", "exam_mode": "老高考", "category": "理工", "batch": "普通类一批", "control_line": 475, "min_score": 617, "min_rank": null, "note": ""},
+    {"year": 2024, "province": "陕西", "exam_mode": "老高考", "category": "文史", "batch": "普通类一批", "control_line": 488, "min_score": 593, "min_rank": null, "note": ""},
+    {"year": 2023, "province": "陕西", "exam_mode": "老高考", "category": "理工", "batch": "普通类一批", "control_line": 443, "min_score": 603, "min_rank": null, "note": ""},
+    {"year": 2023, "province": "陕西", "exam_mode": "老高考", "category": "文史", "batch": "普通类一批", "control_line": 489, "min_score": 571, "min_rank": null, "note": ""},
+    {"year": 2022, "province": "陕西", "exam_mode": "老高考", "category": "理工", "batch": "普通类一批", "control_line": 449, "min_score": 591, "min_rank": null, "note": ""},
+    {"year": 2022, "province": "陕西", "exam_mode": "老高考", "category": "文史", "batch": "普通类一批", "control_line": 484, "min_score": 558, "min_rank": null, "note": ""},
+
+    {"year": 2024, "province": "重庆", "exam_mode": "新高考", "category": "物理", "batch": "本科批", "control_line": 499, "min_score": 623, "min_rank": null, "note": ""},
+    {"year": 2024, "province": "重庆", "exam_mode": "新高考", "category": "历史", "batch": "本科批", "control_line": 506, "min_score": 606, "min_rank": null, "note": ""},
+    {"year": 2023, "province": "重庆", "exam_mode": "新高考", "category": "物理", "batch": "本科批", "control_line": 468, "min_score": 600, "min_rank": null, "note": ""},
+    {"year": 2023, "province": "重庆", "exam_mode": "新高考", "category": "历史", "batch": "本科批", "control_line": 480, "min_score": 581, "min_rank": null, "note": ""},
+    {"year": 2022, "province": "重庆", "exam_mode": "新高考", "category": "物理", "batch": "本科批", "control_line": 476, "min_score": 587, "min_rank": null, "note": ""},
+    {"year": 2022, "province": "重庆", "exam_mode": "新高考", "category": "历史", "batch": "本科批", "control_line": 493, "min_score": 565, "min_rank": null, "note": ""},
+
+    {"year": 2024, "province": "云南", "exam_mode": "老高考", "category": "理工", "batch": "普通类一批", "control_line": 505, "min_score": 620, "min_rank": null, "note": ""},
+    {"year": 2024, "province": "云南", "exam_mode": "老高考", "category": "文史", "batch": "普通类一批", "control_line": 550, "min_score": 632, "min_rank": null, "note": ""},
+    {"year": 2023, "province": "云南", "exam_mode": "老高考", "category": "理工", "batch": "普通类一批", "control_line": 485, "min_score": 603, "min_rank": null, "note": ""},
+    {"year": 2023, "province": "云南", "exam_mode": "老高考", "category": "文史", "batch": "普通类一批", "control_line": 530, "min_score": 608, "min_rank": null, "note": ""},
+    {"year": 2022, "province": "云南", "exam_mode": "老高考", "category": "理工", "batch": "普通类一批", "control_line": 515, "min_score": 591, "min_rank": null, "note": ""},
+    {"year": 2022, "province": "云南", "exam_mode": "老高考", "category": "文史", "batch": "普通类一批", "control_line": 575, "min_score": 604, "min_rank": null, "note": ""},
+
+    {"year": 2024, "province": "贵州", "exam_mode": "新高考", "category": "物理", "batch": "本科批", "control_line": 482, "min_score": 609, "min_rank": null, "note": ""},
+    {"year": 2024, "province": "贵州", "exam_mode": "新高考", "category": "历史", "batch": "本科批", "control_line": 505, "min_score": 600, "min_rank": null, "note": ""},
+    {"year": 2023, "province": "贵州", "exam_mode": "老高考", "category": "理工", "batch": "普通类一批", "control_line": 459, "min_score": 574, "min_rank": null, "note": ""},
+    {"year": 2023, "province": "贵州", "exam_mode": "老高考", "category": "文史", "batch": "普通类一批", "control_line": 528, "min_score": 581, "min_rank": null, "note": ""},
+    {"year": 2022, "province": "贵州", "exam_mode": "老高考", "category": "理工", "batch": "普通类一批", "control_line": 451, "min_score": 558, "min_rank": null, "note": ""},
+    {"year": 2022, "province": "贵州", "exam_mode": "老高考", "category": "文史", "batch": "普通类一批", "control_line": 549, "min_score": 570, "min_rank": null, "note": ""}
+  ]
+}

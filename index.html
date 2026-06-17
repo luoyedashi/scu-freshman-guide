@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>川大新生指南 · 分数线 · 专业 · 升学规划</title>
+  <meta name="description" content="四川大学新生报考一站式指南：历年各省分数线查询、招生政策、专业介绍，学长学姐升学规划与家教服务。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="川大新生指南 · 学长学姐陪你上岸">
+  <meta property="og:description" content="历年分数线 · 招生政策 · 专业全景 · 升学规划与家教服务">
+  <meta property="og:url" content="https://luoyedashi.github.io/scu-freshman-guide/">
+  <meta property="og:image" content="https://luoyedashi.github.io/scu-freshman-guide/share-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/brand/logo-placeholder.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="disclaimer-bar">本网站非四川大学官方招生网站 · 信息仅供参考</div>
+
+  <nav class="top-nav" aria-label="主导航">
+    <div class="top-nav__inner" id="top-nav-inner"></div>
+  </nav>
+
+  <div class="page-wrap">
+    <!-- Hero -->
+    <section class="hero" id="section-hero">
+      <div class="hero__logo" aria-hidden="true">川</div>
+      <h1 class="hero__title">望江指南 · 川大新生指南</h1>
+      <p class="hero__subtitle">历年分数线 · 招生政策 · 专业全景 · 学长学姐陪你上岸</p>
+      <div class="hero__banner" role="img" aria-label="四川大学校园"></div>
+      <p class="hero__trust" id="scores-updated">数据来源于四川大学本科招生网公开信息</p>
+    </section>
+
+    <div class="quick-grid" role="navigation" aria-label="快捷入口">
+      <div class="quick-item" data-scroll="section-scores" tabindex="0">
+        <span class="quick-item__icon">📊</span>
+        <span class="quick-item__label">分数线</span>
+      </div>
+      <div class="quick-item" data-scroll="section-policies" tabindex="0">
+        <span class="quick-item__icon">📋</span>
+        <span class="quick-item__label">政策</span>
+      </div>
+      <div class="quick-item" data-scroll="section-majors" tabindex="0">
+        <span class="quick-item__icon">🎓</span>
+        <span class="quick-item__label">专业</span>
+      </div>
+      <div class="quick-item" data-scroll="section-services" tabindex="0">
+        <span class="quick-item__icon">🧭</span>
+        <span class="quick-item__label">升学</span>
+      </div>
+      <div class="quick-item" data-scroll="section-services" tabindex="0">
+        <span class="quick-item__icon">📚</span>
+        <span class="quick-item__label">家教</span>
+      </div>
+    </div>
+
+    <div class="province-picker">
+      <label for="hero-province">你的省份是？</label>
+      <select id="hero-province" aria-label="选择省份">
+        <option value="四川">四川</option>
+      </select>
+      <button type="button" id="province-go">查看本省历年分数线</button>
+    </div>
+
+    <!-- Scores -->
+    <section class="section" id="section-scores">
+      <header class="section__header">
+        <span class="section__tag">分数线</span>
+        <h2 class="section__title">历年各省录取分数线</h2>
+        <p class="section__desc">首发覆盖四川、陕西、重庆、云南、贵州 · 更多省份陆续更新</p>
+      </header>
+
+      <div class="filter-group">
+        <div class="filter-group__label">省份</div>
+        <div class="filter-chips" id="filter-province"></div>
+      </div>
+      <div class="filter-group">
+        <div class="filter-group__label">年份</div>
+        <div class="filter-chips" id="filter-year"></div>
+      </div>
+      <div class="filter-group">
+        <div class="filter-group__label">科类</div>
+        <div class="filter-chips" id="filter-category"></div>
+      </div>
+      <div class="filter-group">
+        <div class="filter-group__label">批次</div>
+        <div class="filter-chips" id="filter-batch"></div>
+      </div>
+
+      <div class="score-list" id="score-list"></div>
+      <p class="section__desc" style="margin-top:12px">分数线仅供参考，最终以各省考试院及学校官方公布为准。</p>
+    </section>
+
+    <!-- Policies -->
+    <section class="section" id="section-policies">
+      <header class="section__header">
+        <span class="section__tag">招生政策</span>
+        <h2 class="section__title">官方政策一键直达</h2>
+        <p class="section__desc">汇总川大招生网公开政策链接，点击跳转原文</p>
+      </header>
+      <input type="search" class="policy-search" id="policy-search" placeholder="搜索政策名称或分类…" aria-label="搜索政策">
+      <div class="policy-list" id="policy-list"></div>
+    </section>
+
+    <!-- Majors -->
+    <section class="section" id="section-majors">
+      <header class="section__header">
+        <span class="section__tag">专业介绍</span>
+        <h2 class="section__title">川大专业全景</h2>
+        <p class="section__desc">按学院浏览 · 15+ 热门专业深度介绍</p>
+      </header>
+      <input type="search" class="major-search" id="major-search" placeholder="搜索专业，如「计算机」「医学」…" aria-label="搜索专业">
+      <div class="major-tags" id="major-tags"></div>
+      <div id="college-list"></div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="section-services">
+      <header class="section__header">
+        <span class="section__tag">学长学姐服务</span>
+        <h2 class="section__title">升学规划 · 家教匹配</h2>
+        <p class="section__desc">川大在读团队 · 过来人经验 · 非流水线机构</p>
+      </header>
+
+      <div class="service-tabs" role="tablist">
+        <button type="button" class="service-tab active" data-panel="plan" role="tab">升学规划</button>
+        <button type="button" class="service-tab" data-panel="tutor" role="tab">家教服务</button>
+      </div>
+
+      <!-- 升学规划 -->
+      <div class="service-panel active" id="panel-plan" role="tabpanel">
+        <p class="service-hero">填志愿只剩几天，信息却散落各处？</p>
+
+        <div class="team-card">
+          <div class="team-card__avatar">望</div>
+          <div class="team-card__info">
+            <h4>望江指南团队</h4>
+            <p>四川大学在读学长学姐 · 覆盖四川、陕西、重庆等省份 · 2024–2025 届志愿辅导经验</p>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-card__icon">🎯</div>
+            <h3 class="feature-card__title">志愿方案定制</h3>
+            <p class="feature-card__desc">冲稳保梯度设计、专业组策略、分数段精准匹配，避免滑档与浪费分数。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">📖</div>
+            <h3 class="feature-card__title">政策与专项解读</h3>
+            <p class="feature-card__desc">强基计划、国家专项、高校专项、中外合作——帮你搞懂门槛与性价比。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">🛤️</div>
+            <h3 class="feature-card__title">入学适应规划</h3>
+            <p class="feature-card__desc">选课策略、转专业路径、竞赛与保研规划，让你进校后不走弯路。</p>
+          </article>
+        </div>
+
+        <div class="process-steps">
+          <span class="process-step">免费咨询</span>
+          <span class="process-step">成绩评估</span>
+          <span class="process-step">方案交付</span>
+          <span class="process-step">录取跟踪</span>
+        </div>
+
+        <blockquote class="testimonial">
+          <strong>四川考生家长：</strong>学长很耐心，帮我们理清了专业组填报逻辑，最后压线进了想去的学院。
+        </blockquote>
+        <blockquote class="testimonial">
+          <strong>陕西考生：</strong>专项政策讲得很清楚，之前完全不知道还能走这条路。
+        </blockquote>
+
+        <div class="cta-box" id="cta-plan">
+          <div class="cta-box__qr">微信二维码<br>（待替换）</div>
+          <p><strong>添加好友备注：省份 + 分数</strong></p>
+          <p class="cta-box__hint">扫码咨询升学规划 · 首诊免费评估</p>
+        </div>
+      </div>
+
+      <!-- 家教服务 -->
+      <div class="service-panel" id="panel-tutor" role="tabpanel">
+        <p class="service-hero">川大学长学姐一对一 · 线上/线下家教</p>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-card__icon">✅</div>
+            <h3 class="feature-card__title">实名审核教员</h3>
+            <p class="feature-card__desc">教员均为四川大学审核在读生，学籍可查，非社会机构挂靠。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">📐</div>
+            <h3 class="feature-card__title">全科覆盖</h3>
+            <p class="feature-card__desc">高考九科 + 大学高数、大物、四六级，满足不同阶段需求。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">🔄</div>
+            <h3 class="feature-card__title">试讲保障</h3>
+            <p class="feature-card__desc">不满意可更换教员，平台记录上课反馈，家长全程可追踪。</p>
+          </article>
+        </div>
+
+        <div class="subject-matrix">
+          <span class="subject-item">语文</span>
+          <span class="subject-item">数学</span>
+          <span class="subject-item">英语</span>
+          <span class="subject-item">物理</span>
+          <span class="subject-item">化学</span>
+          <span class="subject-item">生物</span>
+          <span class="subject-item">高数</span>
+          <span class="subject-item">大物</span>
+          <span class="subject-item">四六级</span>
+        </div>
+
+        <div class="process-steps">
+          <span class="process-step">提交需求</span>
+          <span class="process-step">48h 匹配</span>
+          <span class="process-step">试讲</span>
+          <span class="process-step">正式上课</span>
+        </div>
+
+        <p class="section__desc">价格因年级与科目而异，请添加微信获取报价。高一至高三辅导请咨询具体课时方案。</p>
+
+        <div class="cta-box" id="cta-tutor">
+          <div class="cta-box__qr">微信二维码<br>（待替换）</div>
+          <p><strong>添加好友备注：家教 + 年级 + 科目</strong></p>
+          <p class="cta-box__hint">信息中介服务 · 不承诺升学结果</p>
+        </div>
+
+        <p class="safety-note">本平台提供家教信息匹配服务，教员资质经学籍核验。上课安全与费用事宜请通过平台沟通留存记录。家教广告不构成对学习成绩提升的承诺。</p>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p><strong>望江指南</strong> · 四川大学新生报考参考站</p>
+      <p>本网站由学生团队运营，<strong>非四川大学官方招生网站</strong></p>
+      <p>数据来源：<a href="https://zs.scu.edu.cn" target="_blank" rel="noopener">四川大学本科招生网</a></p>
+      <p>分数线、政策链接请以官方最新公布为准</p>
+      <p style="margin-top:8px">© 2026 望江指南团队</p>
+    </footer>
+  </div>
+
+  <button type="button" class="fab" id="fab-cta">咨询我们</button>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

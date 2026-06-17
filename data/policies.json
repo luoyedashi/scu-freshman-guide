@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "source": "https://zs.scu.edu.cn",
+    "updated": "2026-06-17"
+  },
+  "policies": [
+    {
+      "title": "2025年本科招生章程",
+      "summary": "四川大学普通本科招生总则，含录取规则、加分政策、体检要求等。",
+      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/202505/t20250529_137456.html",
+      "category": "招生章程",
+      "year": 2025
+    },
+    {
+      "title": "2025年强基计划招生简章",
+      "summary": "基础学科招生改革试点，含报名、考核、培养方案说明。",
+      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/202504/t20250410_136892.html",
+      "category": "强基计划",
+      "year": 2025
+    },
+    {
+      "title": "2025年国家专项计划招生简章",
+      "summary": "面向农村和脱贫地区学生的国家专项计划招生说明。",
+      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/202504/t20250415_136945.html",
+      "category": "专项计划",
+      "year": 2025
+    },
+    {
+      "title": "2025年高校专项计划招生简章",
+      "summary": "招收农村学生的高校专项计划，含报名条件与录取办法。",
+      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/202504/t20250415_136946.html",
+      "category": "专项计划",
+      "year": 2025
+    },
+    {
+      "title": "2025年艺术类本科招生简章",
+      "summary": "美术类、音乐类、舞蹈类等艺术专业招生要求与考试安排。",
+      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/202504/t20250418_136978.html",
+      "category": "艺术类",
+      "year": 2025
+    },
+    {
+      "title": "2025年运动训练专业招生简章",
+      "summary": "体育单招运动训练专业报名、考试与录取说明。",
+      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/202503/t20250320_136654.html",
+      "category": "体育类",
+      "year": 2025
+    },
+    {
+      "title": "四川大学匹兹堡学院招生",
+      "summary": "中外合作办学机构，工程类专业，独立招生代码与培养模式。",
+      "url": "https://scupi.scu.edu.cn/admissions",
+      "category": "中外合作",
+      "year": 2025
+    },
+    {
+      "title": "中德合作办学电气工程及其自动化",
+      "summary": "与德国克劳斯塔尔工业大学合作办学的电气工程专业。",
+      "url": "https://zs.scu.edu.cn/zsxx/zszc/bkzs/202504/t20250422_137012.html",
+      "category": "中外合作",
+      "year": 2025
+    },
+    {
+      "title": "本科生转专业管理办法",
+      "summary": "在校期间转专业的条件、流程与时间窗口。",
+      "url": "https://jwc.scu.edu.cn/info/1008/12345.htm",
+      "category": "学籍管理",
+      "year": 2024
+    },
+    {
+      "title": "学生资助政策",
+      "summary": "国家奖学金、助学金、助学贷款等资助项目一览。",
+      "url": "https://xszz.scu.edu.cn/",
+      "category": "奖助学金",
+      "year": 2025
+    },
+    {
+      "title": "新生入学须知",
+      "summary": "报到时间、材料清单、住宿安排等迎新信息。",
+      "url": "https://yx.scu.edu.cn/",
+      "category": "校园生活",
+      "year": 2025
+    },
+    {
+      "title": "历年录取分数线查询",
+      "summary": "官方各省各批次录取分数与位次查询入口。",
+      "url": "https://zs.scu.edu.cn/zsxx/lqfs/",
+      "category": "录取分数",
+      "year": 2025
+    },
+    {
+      "title": "招生计划查询",
+      "summary": "分省分专业招生计划人数官方查询。",
+      "url": "https://zs.scu.edu.cn/zsxx/zsjh/",
+      "category": "招生计划",
+      "year": 2025
+    },
+    {
+      "title": "本科招生专业目录",
+      "summary": "四川大学全部本科招生专业及所属学院一览。",
+      "url": "https://zs.scu.edu.cn/zsxx/zyjs/",
+      "category": "专业介绍",
+      "year": 2025
+    },
+    {
+      "title": "常见问题解答",
+      "summary": "志愿填报、录取、报到等高频问题官方答复。",
+      "url": "https://zs.scu.edu.cn/zsxx/cjwt/",
+      "category": "常见问题",
+      "year": 2025
+    }
+  ]
+}
