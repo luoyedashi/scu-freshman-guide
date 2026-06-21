@@ -14,6 +14,6 @@
 
 ## 更新流程
 
-1. 从 [四川大学本科招生网](https://zs.scu.edu.cn/zsxx/lqfs/) 抄录或导出表格
+1. 从 [四川大学本科招生网 · 历年录取](https://zs.scu.edu.cn/list.jsp?urltype=tree.TreeTempUrl&wbtreeid=1105) 抄录或导出表格
 2. 填入 `data/scores_import.csv`
 3. 运行 `python scripts/fetch_scores.py --csv data/scores_import.csv`

@@ -1,5 +1,5 @@
 {
-  "meta": { "updated": "2026-06-17" },
+  "meta": { "updated": "2026-06-21" },
   "checklists": [
     {
       "id": "qiangji",
@@ -23,7 +23,7 @@
         {"text": "已在阳光高考平台完成高校专项资格名单公示核对", "required": true},
         {"text": "志愿填报时在对应批次填报川大高校专项计划", "required": true}
       ],
-      "urlKey": "charter_mirror_2026"
+      "urlKey": "chsi_charter"
     },
     {
       "id": "guojia",

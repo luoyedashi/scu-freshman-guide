@@ -35,7 +35,7 @@ python -m http.server 8080
 
 ## 更新分数线
 
-1. 从 [四川大学本科招生网](https://zs.scu.edu.cn/zsxx/lqfs/) 抄录数据
+1. 从 [四川大学本科招生网 · 历年录取](https://zs.scu.edu.cn/list.jsp?urltype=tree.TreeTempUrl&wbtreeid=1105) 抄录数据
 2. 填入 `data/scores_import.csv`（可先运行 `python scripts/fetch_scores.py --template` 生成模板）
 3. 执行 `python scripts/fetch_scores.py`
 

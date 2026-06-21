@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
+"""Verify official link keys (browser User-Agent)."""
+
 import ssl
 import urllib.request
 
-HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0.0.0"}
 CTX = ssl.create_default_context()
+
 URLS = {
     "scu_official": "https://www.scu.edu.cn/",
-    "scu_zs_portal": "https://www.scu.edu.cn/zsxx.htm",
-    "scu_zs_home": "https://zs.scu.edu.cn/",
+    "scu_zs_portal": "https://www.scu.edu.cn/zsjy.htm",
+    "scu_zs_home": "https://zs.scu.edu.cn/index.htm",
+    "scu_zs_scores": "https://zs.scu.edu.cn/list.jsp?urltype=tree.TreeTempUrl&wbtreeid=1105",
     "scu_qiangji_charter": "https://zs.scu.edu.cn/info/1091/3364.htm",
     "chsi_school": "https://gaokao.chsi.com.cn/sch/schoolInfo--schId-10610.dhtml",
-    "chsi_charter": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/",
+    "chsi_charter": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-index,lb-1.dhtml",
     "chsi_plan": "https://gaokao.chsi.com.cn/zsgs/mdgs.jsp",
     "chsi_qiangji": "https://bm.chsi.com.cn/jcxkzs/sch/10610",
+    "charter_mirror_2026": "https://www.gaokzx.com/gk/zhiyuan/155958.html",
     "uestc_home": "https://www.uestc.edu.cn/",
     "swjtu_home": "https://www.swjtu.edu.cn/",
 }
@@ -22,6 +27,6 @@ for name, u in URLS.items():
         r = urllib.request.urlopen(
             urllib.request.Request(u, headers=HEADERS), timeout=15, context=CTX
         )
-        print("OK", r.status, name, u)
+        print("OK", r.status, name, r.geturl())
     except Exception as e:
         print("FAIL", name, u, str(e)[:80])

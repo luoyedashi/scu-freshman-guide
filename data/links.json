@@ -1,15 +1,23 @@
 {
   "meta": {
-    "updated": "2026-06-17",
-    "note": "scu_official 为四川大学官网；zs.scu.edu.cn 需在浏览器/微信中直接打开"
+    "updated": "2026-06-21",
+    "verified_with": "opencli browser · 四川大学官网导航 (www.scu.edu.cn / zs.scu.edu.cn)",
+    "note": "zs.scu.edu.cn 需在浏览器/微信内打开；脚本请求可能返回 412，属招生网反爬非链接失效"
   },
   "links": {
     "scu_official": "https://www.scu.edu.cn/",
-    "scu_zs_home": "https://zs.scu.edu.cn/",
-    "scu_zs_portal": "https://www.scu.edu.cn/zsxx.htm",
+    "scu_zs_home": "https://zs.scu.edu.cn/index.htm",
+    "scu_zs_portal": "https://www.scu.edu.cn/zsjy.htm",
+    "scu_zs_overview": "https://www.scu.edu.cn/zsjy/zsjygk.htm",
+    "scu_zs_plans": "https://zs.scu.edu.cn/list.jsp?urltype=tree.TreeTempUrl&wbtreeid=1103",
+    "scu_zs_scores": "https://zs.scu.edu.cn/list.jsp?urltype=tree.TreeTempUrl&wbtreeid=1105",
+    "scu_zs_majors": "https://zs.scu.edu.cn/list.jsp?urltype=tree.TreeTempUrl&wbtreeid=1108",
+    "scu_zs_qiangji_list": "https://zs.scu.edu.cn/list.jsp?urltype=tree.TreeTempUrl&wbtreeid=1118",
+    "scu_zs_notices": "https://zs.scu.edu.cn/list.jsp?urltype=tree.TreeTempUrl&wbtreeid=1091",
+    "scu_admission_query": "https://zjczs.scu.edu.cn/aoadmin/#/admission-search",
     "scu_qiangji_charter": "https://zs.scu.edu.cn/info/1091/3364.htm",
     "chsi_school": "https://gaokao.chsi.com.cn/sch/schoolInfo--schId-10610.dhtml",
-    "chsi_charter": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/",
+    "chsi_charter": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-index,lb-1.dhtml",
     "chsi_plan": "https://gaokao.chsi.com.cn/zsgs/mdgs.jsp",
     "chsi_score": "https://gaokao.chsi.com.cn/zsgs/mdgs.jsp",
     "chsi_qiangji": "https://bm.chsi.com.cn/jcxkzs/sch/10610",
@@ -18,7 +26,7 @@
     "scu_jwc": "https://jwc.scu.edu.cn/",
     "scupi": "https://scupi.scu.edu.cn/",
     "cs_scu": "https://cs.scu.edu.cn/",
-    "wch_clinical": "https://www.wchscu.cn/",
+    "wch_clinical": "https://www.wchscu.cn/index.html",
     "hx_oral": "https://www.hxkq.org/",
     "charter_mirror_2026": "https://www.gaokzx.com/gk/zhiyuan/155958.html",
     "uestc_home": "https://www.uestc.edu.cn/",
